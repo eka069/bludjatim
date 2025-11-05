@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | BLUD Jawa Timur</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+
+<body>
+  <svg width="0" height="0" style="position: absolute">
+    <defs>
+      <clipPath id="wave-shape" clipPathUnits="objectBoundingBox">
+        <path d="M 0,0 L 0.95,0 C 0.68, 0.4, 1.2, 0.75, 0.9, 1 L 0,1 Z"></path>
+      </clipPath>
+    </defs>
+  </svg>
+
+  <div class="login-container">
+    <div class="left-section">
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo BLUD Jatim" />
+      </div>
+
+      <div class="illustration">
+        <img src="images/illustration-1.png" alt="Illustration" />
+      </div>
+
+      <div class="text-block">
+        <h1>BLUD Jatim in Here ...</h1>
+        <p>
+          Selangkah lagi masuk ke Dashboard BLUD Jawa Timur, <br />
+          Kelola Badan Layanan Umum Daerah Anda di satu tempat
+        </p>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <div class="form-container">
+        <h2>Masuk</h2>
+        <form action="profil.html">
+          <input type="text" placeholder="Username / Email" />
+          <input type="password" id="password" placeholder="Password" />
+          <div class="options">
+            <label>
+              <input type="checkbox" id="showPassword" /> Show Password
+            </label>
+            <a href="#">Forgot Password?</a>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-secondary">
+              Login as Tim Penilai
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

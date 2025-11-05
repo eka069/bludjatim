@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil | BLUD Jawa Timur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/penilaian.css" />
+  </head>
+  <body>
+    <!-- SVG Definitions (Hidden) -->
+    <svg style="display: none;">
+      <symbol id="icon-select-arrow" viewBox="0 0 16 16">
+        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </svg>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <img src="images/logo.png" alt="Logo BLUD Jatim" class="navbar-logo" />
+        <div class="breadcrumb">
+          <span>Application</span>
+          <span class="separator">></span>
+          <span class="active">Data Permohonan</span>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-actions">
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+            <button class="search-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <button class="notification-btn">
+            <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
+              <path
+                d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="notification-badge"></span>
+          </button>
+          <div class="user-avatar"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active">
+            <img 
+              src="images/icon_document.png" 
+              alt="Data Permohonan" 
+              class="nav-icon-img"
+            />
+            <span>Data Permohonan</span>
+          </a>
+    
+          <div class="nav-item">
+            <img 
+              src="images/icon_monitoring.png" 
+              alt="Monitoring" 
+              class="nav-icon-img"
+            />
+            <span>Monitoring</span>
+            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M6 12l4-4-4-4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <h2 class="profile-title">Profil</h2>
+
+        <div class="profile-card">
+          <div class="profile-content">
+            <div class="profile-header">
+              <img
+                src="images/logo-sekolah.png"
+                alt="Logo Institusi"
+                class="profile-logo"
+              />
+              <div class="profile-info">
+                <h3 class="institution-name">SMK Negeri 1 Bisa Maju</h3>
+                <div class="role-with-badge">
+                  <span class="status-badge">
+                    <img src="images/icon_uptd.png" 
+                    alt="UPTD Icon" 
+                    width="16" 
+                    height="16" 
+                    />                                        
+                    Belum Memiliki UPTD
+                  </span>
+                </div>
+                <p class="role">Sekretariat (Admin)</p>
+                <div class="location-info">
+                  <div class="info-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 22V12h6v10"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span>Surabaya, Jawa Timur</span>
+                  </div>
+                  <div class="info-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M22 10v6M2 10l10-5 10 5-10 5z"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6 12v5c3 2 7 2 10 0v-5"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span>Biro Perekonomian</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB -->
+            <div class="tab">
+              <input type="radio" id="tab-pendirian" name="tabs" hidden />
+              <label for="tab-pendirian" class="tablinks">
+                <img 
+                  src="images/icon_pendirian.png" 
+                  alt="Pendirian Icon" 
+                  width="18" 
+                  height="18" 
+                />
+                Pendirian
+              </label>
+              
+              <input type="radio" id="tab-penilaian" name="tabs" checked hidden />
+              <label for="tab-penilaian" class="tablinks">
+                <img 
+                  src="images/icon_penilaian.png" 
+                  alt="Penilaian Icon" 
+                  width="18" 
+                  height="18" 
+                />
+                Penilaian
+              </label>
+              
+              <input type="radio" id="tab-ringkasan" name="tabs" hidden />
+              <label for="tab-ringkasan" class="tablinks">
+                <img 
+                  src="images/icon_ringkasan.png" 
+                  alt="Ringkasan Icon" 
+                  width="18" 
+                  height="18" 
+                />
+                Ringkasan
+              </label>
+            </div>
+
+            <!-- Form Content -->
+            <div class="form-section">
+              <div class="form-header">
+                Penilaian Dokumen Substantif (1/3)
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Layanan umum sesuai dengan Permendagri 79 tentang BLUD (Layanan Kesehatan, Pendidikan dan layanan lainnya)
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="layanan_umum" required>
+                    <option value="">Pilih...</option>
+                    <option value="layanan_ada">Adanya layanan umum</option>
+                    <option value="layanan_tidak_ada">Tidak ada layanan umum</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Frekuensi aktivitas layanan dalam periode waktu tertentu
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="frekuensi_aktivitas" required>
+                    <option value="">Pilih...</option>
+                    <option value="harian">Frekuensi layanan dalam periode hari</option>
+                    <option value="mingguan">Frekuensi layanan dalam periode minggu</option>
+                    <option value="bulanan">Frekuensi layanan dalam periode bulan</option>
+                    <option value="triwulanan">Frekuensi layanan dalam periode triwulan</option>
+                    <option value="semesteran">Frekuensi layanan dalam periode semester</option>
+                    <option value="tidak_ada_frekuensi">Tidak ada frekuensi aktivitas layanan</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Pengelolaan Dana khusus (Dana Bergulir, Dana perumahan)
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="pengelolaan_dana_khusus" required>
+                    <option value="">Pilih...</option>
+                    <option value="mengelola_dana_khusus">Mengelola dana khusus</option>
+                    <option value="tidak_mengelola_dana_khusus">Tidak mengelola dana khusus</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Pengelolaan kawasan tertentu (kawasan ekonomi, kawasan wisata, dan Pasar)
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="pengelolaan_kawasan" required>
+                    <option value="">Pilih...</option>
+                    <option value="mengelola_kawasan">Mengelola kawasan tertentu</option>
+                    <option value="tidak_mengelola_kawasan">Tidak mengelola kawasan tertentu</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Adanya instansi, lembaga, atau masyarakat umum yang menggunakan layanan BLUD
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="pengguna_layanan" required>
+                    <option value="">Pilih...</option>
+                    <option value="pemerintah_swasta_masyarakat">Instansi pemerintah, sektor privat, dan masyarakat umum</option>
+                    <option value="pemerintah_pusat_daerah">Instansi pemerintah, baik pusat maupun daerah</option>
+                    <option value="tidak_ada_pengguna">Tidak ada pengguna layanan</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Ketersediaan barang/jasa oleh instansi pemerintah maupun swasta
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="ketersediaan_barang_jasa" required>
+                    <option value="">Pilih...</option>
+                    <option value="disediakan_pemerintah_swasta">Disediakan oleh instansi/organisasi pemerintah dan swasta</option>
+                    <option value="disediakan_salah_satu">Hanya disediakan oleh salah satu (pemerintah atau swasta)</option>
+                    <option value="tidak_ada_penyedia">Tidak ada penyedia</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Adanya unsur barang/jasa semi publik
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="unsur_semi_publik" required>
+                    <option value="">Pilih...</option>
+                    <option value="ada_unsur_semi_publik">Adanya unsur-unsur barang/jasa semi publik</option>
+                    <option value="tidak_ada_unsur_semi_publik">Tidak ada unsur-unsur barang/jasa semi publik</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Adanya Struktur Pengelola Keuangan dan Barang dan Struktur Pengelola teknis Unit Usaha
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="struktur_pengelola" required>
+                    <option value="">Pilih...</option>
+                    <option value="struktur_lengkap">
+                      Ada Struktur Pengelola Keuangan dan Barang serta Struktur Pengelola teknis Unit Usaha
+                    </option>
+                    <option value="struktur_sebagian">
+                      Ada Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha
+                    </option>
+                    <option value="struktur_tidak_ada">
+                      Tidak ada Struktur Pengelola Keuangan dan Barang maupun Struktur Pengelola teknis Unit Usaha
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Adanya Analisis Kelayakan Pelimpahan Jasa Rencana Pelimpahan
+                  <span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="analisis_kelayakan" required>
+                    <option value="">Pilih...</option>
+                    <option value="analisis_dan_rencana_ada">Ada analisis kebutuhan pelatihan dan rencana pelatihan SDM pengelola BLUD</option>
+                    <option value="analisis_atau_rencana_ada">Ada analisis kebutuhan pelatihan atau rencana pelatihan SDM pengelola BLUD</option>
+                    <option value="analisis_tidak_ada">Tidak ada analisis kebutuhan pelatihan dan rencana pelatihan</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Analisis / Komentar
+                  <span class="required">*</span>
+                </label>
+                <textarea class="form-textarea" name="analisis_komentar" rows="4" placeholder="Masukkan analisis atau komentar..." required></textarea>
+              </div>
+            </div>
+
+
+              <div class="form-buttons">
+                <button class="btn-lanjut">Lanjut</button>
+                <button class="btn-batal">Batal</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/penilaian.js"></script>
+  </body>
+</html>

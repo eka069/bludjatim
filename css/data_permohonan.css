@@ -1,0 +1,371 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #6C430A;
+  color: #333;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background-color: #6C430A;
+  padding: 12px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-logo {
+  height: 40px;
+  width: auto;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin-left: 60px;
+}
+
+.breadcrumb .separator {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.breadcrumb .active {
+  color: white;
+  font-weight: 600;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.search-box input {
+  width: 280px;
+  padding: 10px 45px 10px 16px;
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: #EAE5D2;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: rgba(84, 82, 82, 0.6);
+}
+
+.search-box input:focus {
+  background-color: #EAE5D2;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.search-btn {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #6C430A;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.notification-btn {
+  position: relative;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  border: 2px solid #6C430A;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/* ===== MAIN CONTAINER ===== */
+.main-container {
+  display: flex;
+  height: calc(100vh - 66px);
+  background-color: #6C430A;
+  position: relative;
+  padding: 80px;
+  padding-left: 0;
+}
+
+/* Layer 2: Background di belakang sidebar dan content */
+.main-container::before {
+  content: '';
+  position: absolute;
+  left: 90px;
+  top: 30px;
+  right: 90px;
+  height: 150px;
+  background-color: #B66C05;
+  border-radius: 20px;
+  z-index: 1;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 280px;
+  background-color: #FFDFB1;
+  padding: 80px 0;
+  position: absolute;
+  left: 30px;
+  top: 50px;
+  bottom: -90px;
+  border-radius: 25px 0px 0 0;
+  z-index: 3;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 15px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  color: #6C430A;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-right: 20px;
+}
+
+.nav-item:hover {
+  background-color: rgba(108, 67, 10, 0.46);
+  color: white;
+}
+
+.nav-item.active {
+  background-color: #6C430A;
+  color: white;
+}
+
+.nav-icon-img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Filter warna icon untuk role penilai (brown) */
+.role-penilai .nav-icon-img {
+  filter: invert(34%) sepia(85%) saturate(2000%) hue-rotate(16deg) brightness(50%) contrast(100%);
+}
+
+/* Filter warna icon menjadi putih saat active */
+.nav-item.active .nav-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+/* Filter warna icon menjadi putih saat hover */
+.nav-item:hover .nav-icon-img {
+  filter: brightness(0) invert(1);
+}
+
+.nav-item .chevron {
+  margin-left: auto;
+  width: 18px;
+  height: 18px;
+  transform: rotate(90deg);
+}
+
+/* ===== MAIN CONTENT ===== */
+.content {
+  flex: 1;
+  position: relative;
+  margin-left: 320px;
+  z-index: 4;
+  overflow: visible;
+}
+
+/* Layer 3: Background abu-abu */
+.content::before {
+  content: '';
+  position: absolute;
+  left: -30px;
+  top: -30px;
+  right: -30px;
+  bottom: -90px;
+  background-color: #F1F5F8;
+  border-radius: 25px 25px 0 0;
+  z-index: 2;
+}
+
+.data-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 4;
+}
+
+.data-card {
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #D1DCE5;
+  padding: 0px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 3;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* Sembunyikan scrollbar untuk Chrome, Safari, Opera */
+.data-card::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===== TABLE STYLES ===== */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  text-align: center;
+}
+
+.data-table thead {
+  background-color: #F8F8F8;
+}
+
+.data-table th {
+  padding: 16px 20px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.data-table td {
+  padding: 20px 20px;
+  font-size: 12px;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+/* Hover effect */
+.data-table tbody tr:hover {
+  background-color: #FAFAFA;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.3px;
+}
+
+.status-open {
+  background-color: #E8E8E8;
+  color: #666;
+}
+
+.status-progress {
+  background-color: #E3F2FD;
+  color: #1976D2;
+}
+
+.status-done {
+  background-color: #A9F1D9;
+  color: #00885A;
+}
+
+/* Button Detail */
+.btn-detail {
+  background-color: white;
+  color: #B66C05;
+  border: 2px solid #B66C05;
+  padding: 8px 8px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+}
+
+
+.btn-detail:hover {
+  background-color: #B66C05;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(182, 108, 5, 0.3);
+}

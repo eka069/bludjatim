@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil | BLUD Jawa Timur</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/penilaian.css" />
+  </head>
+  <body>
+    <!-- SVG Definitions (Hidden) -->
+    <svg style="display: none;">
+      <symbol id="icon-select-arrow" viewBox="0 0 16 16">
+        <path d="M4 6l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </svg>
+
+    <!-- Header / Navbar -->
+    <header class="navbar">
+      <div class="navbar-left">
+        <img src="images/logo.png" alt="Logo BLUD Jatim" class="navbar-logo" />
+        <div class="breadcrumb">
+          <span>Application</span>
+          <span class="separator">></span>
+          <span class="active">Data Permohonan</span>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <div class="navbar-actions">
+          <div class="search-box">
+            <input type="text" placeholder="Search..." />
+            <button class="search-btn">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path
+                  d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </div>
+          <button class="notification-btn">
+            <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
+              <path
+                d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="notification-badge"></span>
+          </button>
+          <div class="user-avatar"></div>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <nav class="sidebar-nav">
+          <a href="#" class="nav-item active">
+            <img 
+              src="images/icon_document.png" 
+              alt="Data Permohonan" 
+              class="nav-icon-img"
+            />
+            <span>Data Permohonan</span>
+          </a>
+    
+          <div class="nav-item">
+            <img 
+              src="images/icon_monitoring.png" 
+              alt="Monitoring" 
+              class="nav-icon-img"
+            />
+            <span>Monitoring</span>
+            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path
+                d="M6 12l4-4-4-4"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </div>
+        </nav>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="content">
+        <h2 class="profile-title">Profil</h2>
+
+        <div class="profile-card">
+          <div class="profile-content">
+            <div class="profile-header">
+              <img
+                src="images/logo-sekolah.png"
+                alt="Logo Institusi"
+                class="profile-logo"
+              />
+              <div class="profile-info">
+                <h3 class="institution-name">SMK Negeri 1 Bisa Maju</h3>
+                <div class="role-with-badge">
+                  <span class="status-badge">
+                    <img src="images/icon_uptd.png" 
+                    alt="UPTD Icon" 
+                    width="16" 
+                    height="16" 
+                    />                                        
+                    Belum Memiliki UPTD
+                  </span>
+                </div>
+                <p class="role">Sekretariat (Admin)</p>
+                <div class="location-info">
+                  <div class="info-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M9 22V12h6v10"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span>Surabaya, Jawa Timur</span>
+                  </div>
+                  <div class="info-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M22 10v6M2 10l10-5 10 5-10 5z"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M6 12v5c3 2 7 2 10 0v-5"
+                        stroke="#666"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                    <span>Biro Perekonomian</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TAB -->
+            <div class="tab">
+              <input type="radio" id="tab-pendirian" name="tabs" hidden />
+              <label for="tab-pendirian" class="tablinks">
+                <img 
+                  src="images/icon_pendirian.png" 
+                  alt="Pendirian Icon" 
+                  width="18" 
+                  height="18" 
+                />
+                Pendirian
+              </label>
+              
+              <input type="radio" id="tab-penilaian" name="tabs" checked hidden />
+              <label for="tab-penilaian" class="tablinks">
+                <img 
+                  src="images/icon_penilaian.png" 
+                  alt="Penilaian Icon" 
+                  width="18" 
+                  height="18" 
+                />
+                Penilaian
+              </label>
+              
+              <input type="radio" id="tab-ringkasan" name="tabs" hidden />
+              <label for="tab-ringkasan" class="tablinks">
+                <img 
+                  src="images/icon_ringkasan.png" 
+                  alt="Ringkasan Icon" 
+                  width="18" 
+                  height="18" 
+                />
+                Ringkasan
+              </label>
+            </div>
+
+            <!-- Form Content -->
+            <div class="form-section">
+              <div class="form-header">
+                Penilaian Dokumen Teknis (2/3)
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Adanya potensi pendapatan yang cukup signifikan<span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="potensi_pendapatan" required>
+                    <option value="">Pilih...</option>
+                    <option value=">100jt">Potensi pendapatan di atas 100 juta</option>
+                    <option value="75-100jt">Potensi pendapatan di antara 75 juta sampai dengan 100 juta per tahun</option>
+                    <option value="50-75jt">Potensi pendapatan di antara 50 juta sampai dengan 75 juta per tahun</option>
+                    <option value="25-50jt">Potensi pendapatan di antara 25 juta sampai dengan 50 juta per tahun</option>
+                    <option value="10-25jt">Potensi pendapatan di antara 10 juta sampai dengan 25 juta per tahun</option>
+                    <option value="<10jt">Potensi pendapatan di bawah 10 juta</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Spesifikasi teknis layanan umum sesuai dengan Pergub Tupoksi dan uraian tugas sesuai dengan kebutuhan pasar<span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="spesifikasi_teknis" required>
+                    <option value="">Pilih...</option>
+                    <option value="semua_sektor">Adanya spesifikasi teknis layanan umum kepada Instansi Pemerintah baik pusat maupun daerah, sektor privat, dan masyarakat umum</option>
+                    <option value="dua_sektor">Adanya spesifikasi teknis layanan umum kepada Instansi Pemerintah baik pusat maupun daerah, sektor privat, atau masyarakat umum</option>
+                    <option value="tidak_ada">Tidak ada spesifikasi teknis layanan umum</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Kepemilikan dokumen Standar Pelayanan (SP) & Standar Operasional Prosedur (SOP) sesuai peraturan perundang-undangan<span class="required">*</span>
+                </label>
+                <div class="custom-select">
+                  <select name="kepemilikan_sp_sop" required>
+                    <option value="">Pilih...</option>
+                    <option value="sesuai_peraturan">Adanya SP dan SOP dan sesuai dengan peraturan perundang-undangan yang berlaku</option>
+                    <option value="tidak_sesuai">Ada SP dan SOP tetapi tidak sesuai dengan peraturan perundang-undangan yang berlaku</option>
+                    <option value="tidak_ada">Tidak ada SP dan SOP</option>
+                  </select>
+                </div>
+              </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Dokumen Standar Pelayanan (SP) dan Standar Operasional Prosedur (SOP) selalu diperbarui secara periodik<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pembaruan_sp_sop" required>
+                        <option value="">Pilih...</option>
+                        <option value="evaluasi_teratur">SP dan SOP dilakukan monitoring dan evaluasi minimal 2 (dua) tahun terakhir terhitung pada saat diajukan menjadi usulan penerapan BLUD</option>
+                        <option value="tidak_dievaluasi">SP dan SOP tidak pernah dilakukan monitoring dan evaluasi minimal 2 (dua) tahun terakhir terhitung pada saat diajukan menjadi usulan penerapan BLUD</option>
+                        <option value="tidak_ada_sp_sop">Tidak ada SP dan SOP</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya peningkatan atau penambahan unit layanan setelah 2 Tahun menerapkan BLUD<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="peningkatan_unit_layanan" required>
+                        <option value="">Pilih...</option>
+                        <option value="peningkatan_50">Adanya rencana peningkatan sebesar ≥ 50%</option>
+                        <option value="peningkatan_kurang_50">Adanya rencana peningkatan di bawah 50%</option>
+                        <option value="tidak_ada_peningkatan">Tidak ada rencana peningkatan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya peningkatan jumlah pengguna setelah 2 Tahun menerapkan BLUD<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="peningkatan_pengguna" required>
+                        <option value="">Pilih...</option>
+                        <option value="peningkatan_50">Adanya rencana peningkatan sebesar ≥ 50%</option>
+                        <option value="peningkatan_kurang_50">Adanya rencana peningkatan di bawah 50%</option>
+                        <option value="tidak_ada_peningkatan">Tidak ada rencana peningkatan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya rencana peningkatan kepuasan konsumen setelah 2 tahun menerapkan BLUD<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="peningkatan_kepuasan" required>
+                        <option value="">Pilih...</option>
+                        <option value="peningkatan_lebih_10">Peningkatan rata-rata di atas 10%</option>
+                        <option value="peningkatan_5_10">Peningkatan rata-rata antara 5–10%</option>
+                        <option value="peningkatan_kurang_5">Peningkatan rata-rata di bawah 5%</option>
+                        <option value="tidak_ada_peningkatan">Tidak ada peningkatan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya strategi pencapaian target rencana pendapatan<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="strategi_pendapatan" required>
+                        <option value="">Pilih...</option>
+                        <option value="strategi_terukur">Ada strategi pencapaian target pendapatan yang dapat dipertanggungjawabkan</option>
+                        <option value="strategi_kurang_terukur">Ada strategi pencapaian target namun kurang dapat dipertanggungjawabkan</option>
+                        <option value="tanpa_strategi">Tidak ada strategi pencapaian target pendapatan</option>
+                      </select>
+                    </div>
+                  </div>
+
+              <div class="form-group">
+                <label class="form-label">
+                  Analisis / Komentar
+                  <span class="required">*</span>
+                </label>
+                <textarea class="form-textarea" name="analisis_komentar" rows="4" placeholder="Masukkan analisis atau komentar..." required></textarea>
+              </div>
+            </div>
+
+              <div class="form-buttons">
+                <button class="btn-lanjut">Lanjut</button>
+                <button class="btn-sebelumnya">Sebelumnya</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="js/penilaian.js"></script>
+  </body>
+</html>
