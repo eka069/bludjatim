@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | BLUD Jawa Timur</title>
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/dashboard.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar-custom">
+    <div class="container-fluid">
+      <div class="d-flex align-items-center justify-content-between w-100">
+        <!-- Left Side: Logo, Title, Breadcrumb -->
+        <div class="d-flex align-items-center">
+          <button class="hamburger-menu" onclick="toggleSidebar()">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="navbar-logo-wrapper">
+            <img src="../assets/img/logo.png" alt="Logo BLUD" class="navbar-logo-img" onerror="this.style.display='none'">
+          </div>          
+          <div class="breadcrumb-custom">
+            <span>Application</span>
+            <span class="separator">></span>
+            <span class="active">Dashboard</span>
+          </div>
+        </div>
+
+        <!-- Right Side: Search, Notification, Avatar -->
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-box-custom">
+            <input type="text" class="form-control" placeholder="Search..." />
+            <button class="search-btn-custom">
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none">
+                <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <button class="notification-btn-custom">
+            <svg width="22" height="24" viewBox="0 0 20 22" fill="none">
+              <path d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="notification-badge"></span>
+          </button>
+          
+          <div class="user-avatar">U</div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar Overlay (Mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+  <div class="main-container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar-custom" id="sidebar">
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item-custom active">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M9 22V12h6v10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Dashboard</span>
+        </a>
+        
+        <a href="#" class="nav-item-custom">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2M12 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <span>Profil</span>
+        </a>
+        
+        <a href="#" class="nav-item-custom">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <rect x="2" y="3" width="20" height="14" rx="2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8 21h8M12 17v4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Monitoring</span>
+          <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+            <path d="M6 12l4-4-4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- CONTENT -->
+    <div class="content-custom">
+      <div class="content-inner">
+        
+        <!-- KOTAK PUTIH BESAR MEMBUNGKUS SEMUA -->
+        <div class="content-box">
+          <!-- Dashboard Welcome -->
+          <div class="dashboard-welcome">
+            <h2>Dashboard</h2>
+            <p>Selamat datang di sistem monitoring BLUD Jawa Timur</p>
+          </div>
+
+         <!-- Cards Dashboard Usulan -->
+<div class="row g-4 mb-4">
+
+    <!-- Jumlah Usulan Diajukan -->
+    <div class="col-md-6 col-xl-4">
+      <div class="sales-card">
+        <h6 class="sales-card-title">Jumlah Usulan Diajukan</h6>
+  
+        <div class="sales-value-wrapper">
+          <div class="sales-value">
+            <div class="sales-icon up">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="sales-amount">128</span>
+            <span class="sales-percentage">Total Ajuan</span>
+          </div>
+        </div>
+  
+        <div class="sales-progress">
+          <div class="sales-progress-bar progress-cyan" data-width="70"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Jumlah Usulan Diterima -->
+    <div class="col-md-6 col-xl-4">
+      <div class="sales-card">
+        <h6 class="sales-card-title">Jumlah Usulan Diterima</h6>
+  
+        <div class="sales-value-wrapper">
+          <div class="sales-value">
+            <div class="sales-icon up">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="sales-amount">96</span>
+            <span class="sales-percentage">75% dari Total</span>
+          </div>
+        </div>
+  
+        <div class="sales-progress">
+          <div class="sales-progress-bar progress-success" data-width="75"></div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Jumlah Usulan Ditolak -->
+    <div class="col-md-6 col-xl-4">
+      <div class="sales-card">
+        <h6 class="sales-card-title">Jumlah Usulan Ditolak</h6>
+  
+        <div class="sales-value-wrapper">
+          <div class="sales-value">
+            <div class="sales-icon down">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M12 5v14M19 12l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <span class="sales-amount">32</span>
+            <span class="sales-percentage">25% dari Total</span>
+          </div>
+        </div>
+  
+        <div class="sales-progress">
+          <div class="sales-progress-bar progress-purple" data-width="25"></div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  <p class="card-footer-note">Data diperbarui setiap hari pada pukul 00:00 WIB</p>
+  <!-- END KOTAK PUTIH -->
+  
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <script>
+    // Animasi progress bar saat halaman load
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        const progressBars = document.querySelectorAll('.sales-progress-bar');
+        progressBars.forEach(bar => {
+          const width = bar.getAttribute('data-width');
+          bar.style.width = width + '%';
+        });
+      }, 200);
+    });
+
+    // Toggle sidebar untuk mobile
+    function toggleSidebar() {
+      const sidebar = document.getElementById('sidebar');
+      const overlay = document.getElementById('sidebarOverlay');
+      sidebar.classList.toggle('show');
+      overlay.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>
