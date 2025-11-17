@@ -1,0 +1,231 @@
+.sidebar-custom {
+  width: 340px;
+  height: 100%;
+  background-color: #071A50;
+  padding: 28px 15px;
+  overflow-y: auto;
+}
+
+.sidebar-custom::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-custom::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-item-custom {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 20px;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+
+}
+
+.nav-item-custom svg,
+.nav-item-custom i {
+  width: 22px;
+  height: 22px;
+  font-size: 22px;
+  flex-shrink: 0;
+  transition: stroke 0.3s ease;
+}
+
+/* Chevron Icon */
+.nav-item-custom .chevron {
+  margin-left: auto;
+  transition: transform 0.3s ease;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
+  transform: rotate(0deg);
+}
+
+.nav-item-custom.active .chevron {
+  transform: rotate(180deg); 
+}
+
+/* Hover & Active States */
+.nav-item-custom:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.nav-item-custom.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.nav-item-custom:hover svg,
+.nav-item-custom.active svg {
+  stroke: white;
+}
+
+/* Submenu */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+  padding-left: 34px;
+  margin-top: 4px;
+}
+
+.submenu.show {
+  max-height: 250px;
+    opacity: 1;
+
+}
+
+.submenu-item {
+  display: block;
+  padding: 10px 20px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  font-size: 14px;
+  border-left: 3px solid transparent;
+  transition: all 0.3s ease;
+  margin-bottom: 4px;
+  border-radius: 4px;
+
+}
+
+.submenu-item:hover {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+/* .submenu-item.active {
+  color: white;
+  border-left-color: #fbbf24;
+  background-color: rgba(251, 191, 36, 0.1);
+  font-weight: 600;
+} */
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.sidebar-overlay {
+  display: none;
+}
+
+/* ===== RESPONSIVE SIDEBAR ===== */
+@media (max-width: 991px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  /* Sidebar Mobile - RAPAT KE KIRI */
+  .sidebar-custom {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1031;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    border-radius: 0;
+    padding-top: 80px;
+  }
+
+  .sidebar-custom.show {
+    transform: translateX(0);
+  }
+
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1030;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .sidebar-overlay.show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-custom {
+    width: 260px;
+    padding-top: 70px;
+  }
+
+  .nav-item-custom {
+    padding: 12px 18px;
+    font-size: 14px;
+    margin-right: 15px;
+  }
+
+  .nav-item-custom svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .submenu {
+    padding-left: 28px;
+  }
+
+  .submenu-item {
+    font-size: 13px;
+    padding: 9px 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sidebar-custom {
+    width: 75%;
+    max-width: 240px;
+    padding: 60px 10px 20px;
+  }
+
+  .sidebar-nav {
+    padding: 0 5px;
+  }
+
+  .nav-item-custom {
+    padding: 10px 15px;
+    font-size: 13px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar-custom {
+    width: 80%;
+    max-width: 220px;
+  }
+   .submenu {
+    padding-left: 24px;
+  }
+}

@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/penilaian.css" />
+    <link rel="stylesheet" href="../../assets/css/penilaian.css" />
   </head>
   <body>
     <!-- SVG Definitions (Hidden) -->
@@ -203,82 +203,124 @@
             <!-- Form Content -->
             <div class="form-section">
               <div class="form-header">
-                Penilaian Dokumen Administratif (3/3)
+                Penilaian Dokumen Teknis (2/3)
               </div>
 
               <div class="form-group">
                 <label class="form-label">
-                  Kelembagaan yang menggambarkan posisi jabatan pada UPTD & hubungan wewenang / tanggungjawab sesuai ketentuan<span class="required">*</span>
+                  Adanya potensi pendapatan yang cukup signifikan<span class="required">*</span>
                 </label>
                 <div class="custom-select">
-                  <select name="struktur_kelembagaan" required>
+                  <select name="potensi_pendapatan" required>
                     <option value="">Pilih...</option>
-                    <option value="struktur_lengkap">Ada struktur dan lengkap</option>
-                    <option value="struktur_kurang_lengkap">Ada struktur, namun kurang lengkap</option>
-                    <option value="tanpa_struktur">Tidak ada struktur</option>
+                    <option value=">100jt">Potensi pendapatan di atas 100 juta</option>
+                    <option value="75-100jt">Potensi pendapatan di antara 75 juta sampai dengan 100 juta per tahun</option>
+                    <option value="50-75jt">Potensi pendapatan di antara 50 juta sampai dengan 75 juta per tahun</option>
+                    <option value="25-50jt">Potensi pendapatan di antara 25 juta sampai dengan 50 juta per tahun</option>
+                    <option value="10-25jt">Potensi pendapatan di antara 10 juta sampai dengan 25 juta per tahun</option>
+                    <option value="<10jt">Potensi pendapatan di bawah 10 juta</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="form-label">
-                  Adanya prosedur kerja (akuntabilitas berbasis kinerja)<span class="required">*</span>
+                  Spesifikasi teknis layanan umum sesuai dengan Pergub Tupoksi dan uraian tugas sesuai dengan kebutuhan pasar<span class="required">*</span>
                 </label>
                 <div class="custom-select">
-                  <select name="prosedur_kerja" required>
+                  <select name="spesifikasi_teknis" required>
                     <option value="">Pilih...</option>
-                    <option value="prosedur_lengkap">Ada prosedur kerja yang lengkap</option>
-                    <option value="prosedur_tidak_lengkap">Ada wewenang & tanggung jawab, namun prosedur pelaksanaan tugas tidak lengkap</option>
-                    <option value="tanpa_wewenang">Ada prosedur kerja, tetapi tidak ada wewenang dan tanggung jawab</option>
-                    <option value="tanpa_prosedur">Tidak ada prosedur kerja</option>
+                    <option value="semua_sektor">Adanya spesifikasi teknis layanan umum kepada Instansi Pemerintah baik pusat maupun daerah, sektor privat, dan masyarakat umum</option>
+                    <option value="dua_sektor">Adanya spesifikasi teknis layanan umum kepada Instansi Pemerintah baik pusat maupun daerah, sektor privat, atau masyarakat umum</option>
+                    <option value="tidak_ada">Tidak ada spesifikasi teknis layanan umum</option>
                   </select>
                 </div>
               </div>
 
               <div class="form-group">
                 <label class="form-label">
-                  Pengelompokkan fungsi (akuntabilitas berbasis kinerja)<span class="required">*</span>
+                  Kepemilikan dokumen Standar Pelayanan (SP) & Standar Operasional Prosedur (SOP) sesuai peraturan perundang-undangan<span class="required">*</span>
                 </label>
                 <div class="custom-select">
-                  <select name="pengelompokan_fungsi" required>
+                  <select name="kepemilikan_sp_sop" required>
                     <option value="">Pilih...</option>
-                    <option value="fungsi_lengkap">Ada pengelompokkan fungsi yang logis dan lengkap</option>
-                    <option value="fungsi_tidak_sesuai">Ada pengelompokkan fungsi logis, tetapi penempatannya tidak sesuai</option>
-                    <option value="tanpa_fungsi">Tidak ada pengelompokkan fungsi yang logis</option>
+                    <option value="sesuai_peraturan">Adanya SP dan SOP dan sesuai dengan peraturan perundang-undangan yang berlaku</option>
+                    <option value="tidak_sesuai">Ada SP dan SOP tetapi tidak sesuai dengan peraturan perundang-undangan yang berlaku</option>
+                    <option value="tidak_ada">Tidak ada SP dan SOP</option>
                   </select>
                 </div>
               </div>
 
-              <div class="form-group">
-                <label class="form-label">
-                  Pengelolaan Sumber Daya Manusia (SDM)<span class="required">*</span>
-                </label>
-                <div class="custom-select">
-                  <select name="pengelolaan_sdm" required>
-                    <option value="">Pilih...</option>
-                    <option value="sdm_lengkap">Pengelolaan SDM yang lengkap</option>
-                    <option value="sdm_tanpa_phk">Pengelolaan SDM lengkap, kecuali kebijakan PHK</option>
-                    <option value="sdm_tanpa_phk_reward">Pengelolaan SDM lengkap kecuali kebijakan PHK dan reward & punishment</option>
-                    <option value="sdm_tanpa_phk_reward_hak">Pengelolaan SDM lengkap kecuali kebijakan PHK, reward & punishment, serta hak & kewajiban</option>
-                    <option value="sdm_terbatas">Pengelolaan SDM hanya memiliki kebijakan pengadaan, persyaratan, pengangkatan, penempatan, batas usia, masa kerja, hak & kewajiban</option>
-                    <option value="sdm_tidak_ada">Tidak ada sama sekali</option>
-                  </select>
-                </div>
-              </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      Dokumen Standar Pelayanan (SP) dan Standar Operasional Prosedur (SOP) selalu diperbarui secara periodik<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pembaruan_sp_sop" required>
+                        <option value="">Pilih...</option>
+                        <option value="evaluasi_teratur">SP dan SOP dilakukan monitoring dan evaluasi minimal 2 (dua) tahun terakhir terhitung pada saat diajukan menjadi usulan penerapan BLUD</option>
+                        <option value="tidak_dievaluasi">SP dan SOP tidak pernah dilakukan monitoring dan evaluasi minimal 2 (dua) tahun terakhir terhitung pada saat diajukan menjadi usulan penerapan BLUD</option>
+                        <option value="tidak_ada_sp_sop">Tidak ada SP dan SOP</option>
+                      </select>
+                    </div>
+                  </div>
 
-              <div class="form-group">
-                <label class="form-label">
-                  Keabsahan dokumen tata kelola ditandai dengan adanya tanda tangan dan stempel kepala daerah<span class="required">*</span>
-                </label>
-                <div class="custom-select">
-                  <select name="keabsahan_dokumen" required>
-                    <option value="">Pilih...</option>
-                    <option value="ditandatangani">Sudah / akan ditandatangani oleh kepala daerah</option>
-                    <option value="belum_ditandatangani">Belum ditandatangani oleh kepala daerah</option>
-                  </select>
-                </div>
-              </div>
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya peningkatan atau penambahan unit layanan setelah 2 Tahun menerapkan BLUD<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="peningkatan_unit_layanan" required>
+                        <option value="">Pilih...</option>
+                        <option value="peningkatan_50">Adanya rencana peningkatan sebesar ≥ 50%</option>
+                        <option value="peningkatan_kurang_50">Adanya rencana peningkatan di bawah 50%</option>
+                        <option value="tidak_ada_peningkatan">Tidak ada rencana peningkatan</option>
+                      </select>
+                    </div>
+                  </div>
 
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya peningkatan jumlah pengguna setelah 2 Tahun menerapkan BLUD<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="peningkatan_pengguna" required>
+                        <option value="">Pilih...</option>
+                        <option value="peningkatan_50">Adanya rencana peningkatan sebesar ≥ 50%</option>
+                        <option value="peningkatan_kurang_50">Adanya rencana peningkatan di bawah 50%</option>
+                        <option value="tidak_ada_peningkatan">Tidak ada rencana peningkatan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya rencana peningkatan kepuasan konsumen setelah 2 tahun menerapkan BLUD<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="peningkatan_kepuasan" required>
+                        <option value="">Pilih...</option>
+                        <option value="peningkatan_lebih_10">Peningkatan rata-rata di atas 10%</option>
+                        <option value="peningkatan_5_10">Peningkatan rata-rata antara 5–10%</option>
+                        <option value="peningkatan_kurang_5">Peningkatan rata-rata di bawah 5%</option>
+                        <option value="tidak_ada_peningkatan">Tidak ada peningkatan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">
+                      Adanya strategi pencapaian target rencana pendapatan<span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="strategi_pendapatan" required>
+                        <option value="">Pilih...</option>
+                        <option value="strategi_terukur">Ada strategi pencapaian target pendapatan yang dapat dipertanggungjawabkan</option>
+                        <option value="strategi_kurang_terukur">Ada strategi pencapaian target namun kurang dapat dipertanggungjawabkan</option>
+                        <option value="tanpa_strategi">Tidak ada strategi pencapaian target pendapatan</option>
+                      </select>
+                    </div>
+                  </div>
 
               <div class="form-group">
                 <label class="form-label">
@@ -290,7 +332,7 @@
             </div>
 
               <div class="form-buttons">
-                <button class="btn-simpan">Simpan</button>
+                <button class="btn-lanjut">Lanjut</button>
                 <button class="btn-sebelumnya">Sebelumnya</button>
               </div>
             </div>

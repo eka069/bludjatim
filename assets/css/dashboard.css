@@ -1,0 +1,143 @@
+/* ===== SALES CARDS ===== */
+.sales-card {
+  background: #f9fafb;
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+}
+
+.sales-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-3px);
+  background: #ffffff;
+}
+
+.sales-card-title {
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-bottom: 24px;
+}
+
+.sales-value-wrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.sales-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.sales-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sales-icon.up {
+  color: #2ed47a;
+}
+
+.sales-icon.down {
+  color: #f7542e;
+}
+
+.sales-amount {
+  font-size: 30px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.1;
+}
+
+.sales-percentage {
+  font-size: 15px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.sales-progress {
+  height: 8px;
+  background-color: #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.sales-progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease;
+  width: 0;
+}
+
+.progress-cyan {
+  background: linear-gradient(90deg, #04a9f5 0%, #49d0ff 100%);
+}
+
+.progress-purple {
+  background: linear-gradient(90deg, #7759de 0%, #a389f4 100%);
+}
+
+.progress-success {
+  background: linear-gradient(90deg, #2ed47a 0%, #7cf7b9 100%);
+}
+
+.card-footer-note {
+  color: #9ca3af;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .sales-card {
+    padding: 28px;
+  }
+
+  .sales-amount {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 576px) {
+  .sales-card {
+    padding: 20px;
+  }
+
+  .sales-card-title {
+    font-size: 14px;
+  }
+
+  .sales-amount {
+    font-size: 24px;
+  }
+
+  .sales-percentage {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 400px) {
+  .sales-card {
+    padding: 16px 12px;
+  }
+
+  .sales-amount {
+    font-size: 22px;
+  }
+}
