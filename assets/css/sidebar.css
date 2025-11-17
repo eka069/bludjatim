@@ -56,10 +56,6 @@
   transform: rotate(0deg);
 }
 
-.nav-item-custom.active .chevron {
-  transform: rotate(180deg); 
-}
-
 /* Hover & Active States */
 .nav-item-custom:hover {
   background-color: rgba(255, 255, 255, 0.05);
@@ -111,12 +107,12 @@
   border-left-color: rgba(255, 255, 255, 0.3);
 }
 
-/* .submenu-item.active {
+.submenu-item.active {
   color: white;
-  border-left-color: #fbbf24;
+  border-left-color: #3224fb;
   background-color: rgba(251, 191, 36, 0.1);
   font-weight: 600;
-} */
+}
 
 /* Hamburger Menu */
 .hamburger-menu {
