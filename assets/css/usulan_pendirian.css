@@ -1,0 +1,218 @@
+Table Container
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  margin-top: 24px;
+}
+
+/* Table Usulan */
+.table-usulan {
+  margin-bottom: 0;
+}
+
+.table-usulan thead {
+  background-color: #f8f9fa;
+}
+
+.table-usulan thead th {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 16px 20px;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.table-usulan tbody td {
+  padding: 18px 20px;
+  font-size: 14px;
+  color: #374151;
+  vertical-align: middle;
+}
+
+.table-usulan tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.table-usulan tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.table-usulan tbody tr:last-child {
+  border-bottom: none;
+}
+
+.table-usulan th,
+.table-usulan td {
+  text-align: center !important;
+}
+
+/* Badge Styles (semua black / hitam) */
+.badge {
+  font-size: 12px;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background: none !important;
+  color: #000 !important;
+  padding: 0;
+  border-radius: 0;
+}
+
+
+/* Button Styles */
+.btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+}
+
+.btn i {
+  font-size: 14px;
+}
+
+.btn-edit-custom {
+  background-color: #fbbf24;
+  color: #78350f;
+}
+
+.btn-edit-custom:hover {
+  background-color: #f59e0b;
+  color: #78350f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.btn-hapus-custom {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-hapus-custom:hover {
+  background-color: #dc2626;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-detail-custom {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.btn-detail-custom:hover {
+  background-color: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+}
+
+/* Action Buttons Container */
+.d-flex.gap-2 {
+  gap: 8px;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 991px) {
+  .table-container {
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table-usulan {
+    min-width: 800px;
+  }
+
+  .table-usulan thead th {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+
+  .table-usulan tbody td {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .btn {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  .badge {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-container {
+    margin-top: 16px;
+    border-radius: 6px;
+  }
+
+  .table-usulan {
+    min-width: 750px;
+  }
+
+  .table-usulan thead th {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+
+  .table-usulan tbody td {
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .btn i {
+    font-size: 12px;
+  }
+
+  .badge {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .d-flex.gap-2 {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Loading Animation (Optional) */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
