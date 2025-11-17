@@ -96,6 +96,10 @@
   background: linear-gradient(90deg, #2ed47a 0%, #7cf7b9 100%);
 }
 
+.progress-red {
+  background: linear-gradient(90deg, #f7542e 0%, #ff9a7b 100%);
+}
+
 .card-footer-note {
   color: #9ca3af;
   font-size: 13px;
