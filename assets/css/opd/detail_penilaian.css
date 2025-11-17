@@ -1,0 +1,370 @@
+/* BACK BUTTON */
+.back-button-container {
+  margin-bottom: 24px;
+}
+
+.btn-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: transparent;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+  background-color: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.btn-back svg {
+  stroke: currentColor;
+}
+
+/* FORM TABS */
+.form-tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.form-tab {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.form-tab svg {
+  width: 18px;
+  height: 18px;
+}
+
+.form-tab.active {
+  color: #0b2d72;
+  border-bottom-color: #0b2d72;
+}
+
+.form-tab:hover:not(.active) {
+  color: #374151;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* PENILAIAN CONTENT */
+.penilaian-content {
+  max-width: 1200px;
+}
+
+/* ACCORDION */
+.accordion-item {
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background-color: #1e3a8a;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  border-radius: 8px;      
+  overflow: hidden;       
+}
+
+.accordion-header:hover {
+  background-color: #1e40af;
+}
+
+.accordion-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: white;
+  color: #1e3a8a;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.accordion-header:hover .accordion-toggle {
+  background-color: #f8fafc;
+}
+
+.toggle-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+  stroke: #1e3a8a;
+}
+
+.accordion-header.active .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* ACCORDION CONTENT */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+              padding 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  opacity: 0;
+  padding: 0 24px;
+}
+
+.accordion-content.open {
+  max-height: 600px;
+  padding: 20px 24px;
+  opacity: 1;
+}
+
+/* SCORE ITEMS */
+.score-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.score-item:last-of-type {
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 12px;
+}
+
+.score-label {
+  font-size: 14px;
+  color: #1e3a8a;
+  font-weight: 500;
+  flex: 1;
+  line-height: 1.4;
+  padding-right: 16px;
+}
+
+.score-value {
+  font-size: 16px;
+  color: #1e3a8a;
+  font-weight: 700;
+  min-width: 50px;
+  text-align: right;
+}
+
+/* SCORE TOTAL */
+.score-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0 0 0;
+  margin-top: 0;
+}
+
+.total-label {
+  font-size: 16px;
+  color: #1e3a8a;
+  font-weight: 700;
+}
+
+.total-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  height: 36px;
+  padding: 0 16px;
+  background-color: #10b981;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+/* RECOMMENDATION SECTION */
+.recommendation-section {
+  margin-top: 40px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.recommendation-header {
+  padding: 18px 24px;
+  background-color: #1e3a8a;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.recommendation-result {
+  padding: 20px 24px;
+  background-color: #d1fae5;
+  color: #065f46;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid #a7f3d0;
+  border-top: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .form-tabs {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .form-tab {
+    padding: 14px 24px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .penilaian-content {
+    padding: 20px 15px;
+  }
+
+  .accordion-header {
+    padding: 16px 18px;
+    font-size: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .accordion-toggle {
+    align-self: flex-end;
+  }
+
+  .accordion-content.open {
+    padding: 16px 18px;
+  }
+
+  .score-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 12px 0;
+  }
+
+  .score-value {
+    align-self: flex-end;
+  }
+
+  .score-total {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .total-value {
+    align-self: flex-end;
+  }
+
+  .recommendation-header {
+    padding: 16px 18px;
+    font-size: 15px;
+  }
+
+  .recommendation-result {
+    padding: 16px 18px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .back-button-container {
+    margin-bottom: 20px;
+  }
+
+  .btn-back {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+
+  .form-tab {
+    padding: 12px 20px;
+    font-size: 13px;
+  }
+
+  .form-tab svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .accordion-header {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .toggle-text {
+    font-size: 13px;
+  }
+
+  .toggle-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .accordion-content.open {
+    padding: 14px 16px;
+  }
+
+  .score-label {
+    font-size: 13px;
+  }
+
+  .score-value {
+    font-size: 15px;
+  }
+
+  .total-label {
+    font-size: 14px;
+  }
+
+  .total-value {
+    font-size: 15px;
+    min-width: 55px;
+    height: 34px;
+  }
+
+  .recommendation-header {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+
+  .recommendation-result {
+    padding: 14px 16px;
+    font-size: 13px;
+  }
+}

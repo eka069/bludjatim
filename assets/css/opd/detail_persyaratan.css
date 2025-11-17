@@ -1,0 +1,289 @@
+/* BACK BUTTON */
+.back-button-container {
+    margin-bottom: 24px;
+  }
+  
+  .btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: transparent;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-back:hover {
+    background-color: #f9fafb;
+    border-color: #9ca3af;
+  }
+  
+  .btn-back svg {
+    stroke: currentColor;
+  }
+  
+  /* FORM TABS */
+  .form-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 32px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+  
+  .form-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent;
+  }
+  
+  .form-tab svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .form-tab.active {
+    color: #0b2d72;
+    border-bottom-color: #0b2d72;
+  }
+  
+  .form-tab:hover:not(.active) {
+    color: #374151;
+    background: rgba(0, 0, 0, 0.02);
+  }
+  
+  /* DETAIL CONTENT */
+  .detail-content {
+    max-width: 1000px;
+  }
+  
+  /* DETAIL SECTION */
+  .detail-section {
+    margin-bottom: 32px;
+  }
+  
+  .detail-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 8px;
+  }
+  
+  .detail-text-box {
+    width: 100%;
+    padding: 16px;
+    background-color: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1f2937;
+    line-height: 1.7;
+    font-family: "Poppins", sans-serif;
+    text-align: justify;
+  }
+  
+  /* PERSYARATAN TITLE */
+  .persyaratan-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+  }
+  
+  /* FILE LIST */
+  .file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 32px;
+  }
+  
+  .file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background-color: #0b2d72;
+    border-radius: 8px;
+    gap: 20px;
+  }
+  
+  .file-name {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+    color: white;
+    line-height: 1.5;
+  }
+  
+  .btn-view-file {
+    padding: 8px 24px;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    color: #0b2d72;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  
+  .btn-view-file:hover {
+    background-color: #f3f4f6;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .btn-view-file:active {
+    transform: scale(0.98);
+  }
+  
+  /* STATUS CHECK BUTTON */
+  .status-check-container {
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .btn-status-check {
+    padding: 14px 40px;
+    background-color: white;
+    border: 2px solid #0b2d72;
+    border-radius: 8px;
+    color: #0b2d72;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-status-check:hover {
+    background-color: #0b2d72;
+    color: white;
+    box-shadow: 0 4px 12px rgba(11, 45, 114, 0.2);
+  }
+  
+  .btn-status-check:active {
+    transform: scale(0.98);
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .form-tabs {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  
+    .form-tab {
+      padding: 14px 24px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+  
+    .detail-content {
+      padding: 20px 15px;
+    }
+  
+    .detail-text-box {
+      padding: 14px;
+      font-size: 13px;
+    }
+  
+    .file-item {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+  
+    .btn-view-file {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .btn-status-check {
+      width: 100%;
+      padding: 12px 20px;
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .back-button-container {
+      margin-bottom: 20px;
+    }
+  
+    .btn-back {
+      padding: 7px 14px;
+      font-size: 13px;
+    }
+  
+    .form-tab {
+      padding: 12px 20px;
+      font-size: 13px;
+    }
+  
+    .form-tab svg {
+      width: 16px;
+      height: 16px;
+    }
+  
+    .detail-section {
+      margin-bottom: 24px;
+    }
+  
+    .detail-label {
+      font-size: 13px;
+    }
+  
+    .detail-text-box {
+      padding: 12px;
+      font-size: 12px;
+    }
+  
+    .persyaratan-title {
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+  
+    .file-item {
+      padding: 12px 14px;
+    }
+  
+    .file-name {
+      font-size: 13px;
+    }
+  
+    .btn-view-file {
+      padding: 7px 20px;
+      font-size: 13px;
+    }
+  
+    .status-check-container {
+      margin-top: 32px;
+      padding-top: 24px;
+    }
+  
+    .btn-status-check {
+      padding: 11px 20px;
+      font-size: 13px;
+    }
+  }
