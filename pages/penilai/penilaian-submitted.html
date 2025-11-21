@@ -3,265 +3,313 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil | BLUD Jawa Timur</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="../../assets/css/penilai/penilaian-submitted.css" />
-  </head>
-  <body>
-    <!-- Header / Navbar -->
-    <header class="navbar">
-      <div class="navbar-left">
-        <img src="../../assets/img/logo.png" alt="Logo BLUD Jatim" class="navbar-logo" />
-        <div class="breadcrumb">
-          <span>Application</span>
-          <span class="separator">></span>
-          <span class="active">Profil</span>
-        </div>
-      </div>
+    <title>Data Permohonan | BLUD Jawa Timur</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-      <div class="navbar-right">
-        <div class="navbar-actions">
-          <div class="search-box">
-            <input type="text" placeholder="Search..." />
-            <button class="search-btn">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Reusable CSS -->
+    <link rel="stylesheet" href="/assets/css/template.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+
+    <link rel="stylesheet" href="/assets/css/penilai/penilaian-submitted.css" />
+  </head>
+  <body class="role-penilai">
+    <!-- NAVBAR -->
+    <nav class="navbar-custom w-100">
+      <div class="container-fluid p-0">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <div class="d-flex align-items-center">
+            <button class="hamburger-menu" onclick="toggleSidebar()">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
                 <path
-                  d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35"
+                  d="M3 12h18M3 6h18M3 18h18"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <img
+              src="/assets/img/logo.png"
+              alt="Logo BLUD"
+              class="navbar-logo-img"
+              onerror="this.style.display='none'"
+            />
+            <div class="breadcrumb-custom">
+              <span>Application</span>
+              <span class="separator">></span>
+              <span class="active">Profil</span>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="search-box-custom">
+              <input
+                type="text"
+                class="form-control search-input"
+                placeholder="Search..."
+              />
+              <button class="search-btn-custom">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </div>
+
+            <button class="notification-btn-custom">
+              <svg width="22" height="24" viewBox="0 0 20 22" fill="none">
+                <path
+                  d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round" />
+                  stroke-linejoin="round"
+                />
               </svg>
+              <span class="notification-badge"></span>
             </button>
-          </div>
 
-          <button class="notification-btn">
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
-              <path
-                d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
-            <span class="notification-badge"></span>
-          </button>
-          <div class="user-avatar"></div>
+            <div class="user-avatar">A</div>
+          </div>
         </div>
       </div>
-    </header>
+    </nav>
 
-    <div class="main-container">
-      <!-- Sidebar -->
-      <aside class="sidebar">
-        <nav class="sidebar-nav">
-          <!-- Item: Data Permohonan -->
-          <a href="#" class="nav-item active">
-            <img 
-              src="../../assets/img/datapermohonan.png" 
-              alt="Data Permohonan Icon" 
-              width="24" 
-              height="24" 
-            />
-            <span>Data Permohonan</span>
-          </a>
-          <!-- Item: Monitoring -->
-          <div class="nav-item">
-            <img 
-              src="../../assets/img/monitoring.png" 
-              alt="Monitoring Icon" 
-              width="24" 
-              height="24" 
-            />
-            <span>Monitoring</span>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
-              <path
-                d="M6 12l4-4-4-4"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-container w-100">
+      <div class="box-background"></div>
+      <div
+        class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start"
+      >
+        <!-- Sidebar -->
+        <aside class="sidebar-custom" id="sidebar">
+          <nav class="sidebar-nav">
+            <a href="#" class="nav-item-custom active">
+              <img
+                src="/assets/img/icon_document.png"
+                alt="Data Permohonan"
+                class="nav-icon-img"
               />
-            </svg>
-          </div>
-        </nav>
-      </aside>      
+              <span>Data Permohonan</span>
+            </a>
 
-    <!-- Main Content -->
-    <div class="content">
-      <h2 class="profile-title">Profil</h2>
-      <div class="profile-card">
-    
-        <div class="profile-content">
-          <div class="profile-header">
-            <img src="../../assets/img/logo smk.jpg" alt="Logo Institusi" class="profile-logo" />
-           <div class="profile-info">
-              <h2 class="institution-name">SMK Negeri 1 Bisa Maju</h2>
-              <div class="role-with-badge">
-                <span class="status-badge">
+            <div class="nav-item-custom">
+              <img
+                src="/assets/img/icon_monitoring.png"
+                alt="Monitoring"
+                class="nav-icon-img"
+              />
+              <span>Monitoring</span>
+              <svg
+                class="chevron"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <path
+                  d="M6 12l4-4-4-4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="content-inner bg-white h-100">
+          <div class="content-title">
+            <h2>Profil</h2>
+          </div>
+
+          <div class="data-card" style="padding: 35px; overflow-y: auto;">
+              <!-- Profile Header -->
+              <div class="profile-header">
+                <img src="/assets/img/logo-sekolah.png" alt="Logo Institusi" class="profile-logo" onerror="this.style.display='none'" />
+                <div class="flex-grow-1">
+                  <h3 class="institution-name">SMK Negeri 1 Bisa Maju</h3>
+                  <div class="mb-2">
+                    <span class="status-badge">
+                      <img src="/assets/img/icon_uptd.png" alt="UPTD Icon" width="16" height="16" />                                        
+                      Belum Memiliki UPTD
+                    </span>
+                  </div>
+                  <p class="role">Sekretariat (Admin)</p>
+                  <div class="location-info">
+                    <div class="info-item">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9 22V12h6v10" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span>Surabaya, Jawa Timur</span>
+                    </div>
+                    <div class="info-item">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6 12v5c3 2 7 2 10 0v-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span>Biro Perekonomian</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <!-- TABS -->
+            <div class="tabs-container">
+              <div class="tabs">
+                <a href="pendirian.html" class="tab">
                   <img 
-                      src="../../assets/img/belumUPTD.png" 
-                      alt="UPTD Icon" 
-                      width="18" 
-                      height="18" 
-                    />
-                    Belum Memiliki UPTD
-                </span>
+                    src="/assets/img/icon_pendirian.png" 
+                    alt="Pendirian Icon"
+                    onerror="this.style.display='none'"
+                  />
+                  Pendirian
+                </a>
+                
+                <a href="penilaian-submitted.html" class="tab active">
+                  <img 
+                    src="/assets/img/icon_penilaian.png" 
+                    alt="Penilaian Icon"
+                    onerror="this.style.display='none'"
+                  />
+                  Penilaian
+                </a>
+                
+                <a href="ringkasan.html" class="tab">
+                  <img 
+                    src="/assets/img/icon_ringkasan.png" 
+                    alt="Ringkasan Icon"
+                    onerror="this.style.display='none'"
+                  />
+                  Ringkasan
+                </a>
               </div>
-              <p class="role">Sekretariat (Admin)</p>
-              <div class="location-info">
-                <div class="info-item">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M9 22V12h6v10" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>Surabaya, Jawa Timur</span>
+            </div>
+
+
+            <!-- Penilaian Substantif Section -->
+            <div class="penilaian-section">
+              <h3>History Penilaian Dokumen Substantif</h3>
+              
+              <div class="form-item">
+                <label>Layanan umum sesuai dengan Permendagri 79 tentang BLUD (Layanan Kesehatan, Pendidikan dan layanan lainnya)<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Adanya layanan umum</div>
+                  <div class="score">10</div>
                 </div>
-                <div class="info-item">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M6 12v5c3 2 7 2 10 0v-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <span>Biro Perekonomian</span>
-                </div>
               </div>
-            </div>
-          </div>
-    
-          <!-- TAB -->
-          <div class="tab">
-            <a href="pendirian.html" class="tablinks">
-              <img 
-                src="../../assets/img/pendirian.png" 
-                alt="Pendirian Icon" 
-                width="18" 
-                height="18" 
-              />
-              Pendirian
-            </a>
-            
-            <a href="penilaian-submitted.html" class="tablinks active">
-              <img 
-                src="../../assets/img/penilaian.png" 
-                alt="Penilaian Icon" 
-                width="18" 
-                height="18" 
-              />
-              Penilaian
-            </a>
-            
-            <a href="ringkasan.html" class="tablinks">
-              <img 
-                src="../../assets/img/ringkasan.png" 
-                alt="Ringkasan Icon" 
-                width="18" 
-                height="18" 
-              />
-              Ringkasan
-            </a>
-          </div>
-
-          <!-- Penilaian Substantif Section -->
-        <div class="penilaian-section">
-          <h3>History Penilaian Dokumen Substantif</h3>
-          
-            <div class="form-item">
-              <label>Layanan umum sesuai dengan Permendagri 79 tentang BLUD (Layanan Kesehatan, Pendidikan dan layanan lainnya)<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Adanya layanan umum</div>
-                <div class="score">10</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Frekuensi aktivitas layanan dalam periode waktu tertentu<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Frekuensi layanan dalam periode hari</div>
-                <div class="score">10</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Pengelolaan Dana khusus (Dana Bergulir, Dana perumahan)<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Tidak mengelola dana khusus</div>
-                <div class="score">0</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Pengelolaan kawasan tertentu (kawasan ekonomi, kawasan wisata, dan Pasar)<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Tidak mengelola kawasan tertentu</div>
-                <div class="score">0</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Adanya instansi, lembaga, atau masyarakat umum yang menggunakan layanan BLUD<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Instansi Pemerintah hasil grasat menjadi daerah</div>
-                <div class="score">0</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Ketersediaan barang/jasa oleh instansi pemerintah maupun swasta<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Disediakan oleh instansi/organisasi pemerintah dan swasta</div>
-                <div class="score">10</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Adanya unsur barang/jasa semi publik<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Tidak ada unsur untuk barang/jasa semi publik</div>
-                <div class="score">0</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Adanya Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Ada Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha</div>
-                <div class="score">5</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Adanya Analisis Kebutuhan Pelatihan dan Rencana Pelatihan<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Ada Analisis Kebutuhan Pelatihan dan Rencana Pelatihan SBM pengelola BLUD</div>
-                <div class="score">10</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label>Analisis / Komentar<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.              
-              </div>
-            </div>
-        </div>
-
-        <!-- History Penilaian Dokumen Teknis -->
-        <div class="penilaian-section">
-          <h3>History Penilaian Dokumen Teknis</h3>
-          
-            <div class="form-item">
-              <label> Adanya potensi pendapatan yang cukup signifikan <sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Potensi pendapatan di antara 75 juta sampai dengan 100 juta per tahun</div>
-                <div class="score">8</div>
-              </div>
-            </div>
 
               <div class="form-item">
-                <label> Spesifikasi teknis layanan umum sesuai dengan Pergub Tupoksi dan uraian tugas sesuai dengan kebutuhan pasar <sup>*</sup></label>
+                <label>Frekuensi aktivitas layanan dalam periode waktu tertentu<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Frekuensi layanan dalam periode hari</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Pengelolaan Dana khusus (Dana Bergulir, Dana perumahan)<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Tidak mengelola dana khusus</div>
+                  <div class="score">0</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Pengelolaan kawasan tertentu (kawasan ekonomi, kawasan wisata, dan Pasar)<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Tidak mengelola kawasan tertentu</div>
+                  <div class="score">0</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Adanya instansi, lembaga, atau masyarakat umum yang menggunakan layanan BLUD<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Instansi Pemerintah hasil grasat menjadi daerah</div>
+                  <div class="score">0</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Ketersediaan barang/jasa oleh instansi pemerintah maupun swasta<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Disediakan oleh instansi/organisasi pemerintah dan swasta</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Adanya unsur barang/jasa semi publik<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Tidak ada unsur untuk barang/jasa semi publik</div>
+                  <div class="score">0</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Adanya Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Ada Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha</div>
+                  <div class="score">5</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Adanya Analisis Kebutuhan Pelatihan dan Rencana Pelatihan<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Ada Analisis Kebutuhan Pelatihan dan Rencana Pelatihan SBM pengelola BLUD</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Analisis / Komentar<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- History Penilaian Dokumen Teknis -->
+            <div class="penilaian-section">
+              <h3>History Penilaian Dokumen Teknis</h3>
+              
+              <div class="form-item">
+                <label>Adanya potensi pendapatan yang cukup signifikan<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Potensi pendapatan di antara 75 juta sampai dengan 100 juta per tahun</div>
+                  <div class="score">8</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Spesifikasi teknis layanan umum sesuai dengan Pergub Tupoksi dan uraian tugas sesuai dengan kebutuhan pasar<sup>*</sup></label>
                 <div class="answer-row">
                   <div class="answer">Ada Spesifikasi teknis layanan umum kepada Instansi Pemerintah baik pusat maupun daerah, Sektor privat, atau masyarakat umum</div>
                   <div class="score">6</div>
@@ -269,130 +317,133 @@
               </div>
 
               <div class="form-item">
-                <label>  Kepemilikan dokumen Standar Pelayanan (SP) & Standar Operasional Prosedur (SOP) sesuai peraturan perundang-undangan <sup>*</sup></label>
+                <label>Kepemilikan dokumen Standar Pelayanan (SP) & Standar Operasional Prosedur (SOP) sesuai peraturan perundang-undangan<sup>*</sup></label>
                 <div class="answer-row">
-                  <div class="answer"> Ada SP dan SOP dan sesuai dengan peraturan perundang-undangan yang berlaku</div>
+                  <div class="answer">Ada SP dan SOP dan sesuai dengan peraturan perundang-undangan yang berlaku</div>
                   <div class="score">10</div>
                 </div>
               </div>
 
               <div class="form-item">
-                <label> Dokumen Standar Pelayanan (SP) dan Standar Operasional Prosedur (SOP) selalu diperbarui secara periodik <sup>*</sup></label>
+                <label>Dokumen Standar Pelayanan (SP) dan Standar Operasional Prosedur (SOP) selalu diperbarui secara periodik<sup>*</sup></label>
                 <div class="answer-row">
-                  <div class="answer"> SP dan SOP dilakukan monitoring dan evaluasi minimal 2 (dua) tahun terakhir terhitung pada saat diajukan menjadi usulan penerap BLUD</div>
+                  <div class="answer">SP dan SOP dilakukan monitoring dan evaluasi minimal 2 (dua) tahun terakhir terhitung pada saat diajukan menjadi usulan penerap BLUD</div>
                   <div class="score">10</div>
                 </div>
               </div>
             
               <div class="form-item">
-                <label> Adanya peningkatan atau penambahan unit layanan setelah 2 Tahun menerapkan BLUD <sup>*</sup></label>
+                <label>Adanya peningkatan atau penambahan unit layanan setelah 2 Tahun menerapkan BLUD<sup>*</sup></label>
                 <div class="answer-row">
-                  <div class="answer"> Adanya rencana peningkatan sebesar 50%</div>
+                  <div class="answer">Adanya rencana peningkatan sebesar 50%</div>
                   <div class="score">10</div>
                 </div>
               </div>
-
-                <div class="form-item">
-                  <label> Adanya peningkatan jumlah pengguna setelah 2 Tahun menerapkan BLUD <sup>*</sup></label>
-                  <div class="answer-row">
-                    <div class="answer"> Adanya rencana peningkatan sebesar 50%</div>
-                    <div class="score">10</div>
-                  </div>
-                </div>
-
-                  <div class="form-item">
-                    <label> Adanya rencana peningkatan kepuasan konsumen setelah 2 tahun menerapkan BLUD <sup>*</sup></label>
-                    <div class="answer-row">
-                      <div class="answer"> Peningkatan rata-rata 5–10%</div>
-                      <div class="score">8</div>
-                    </div>
-                  </div>
-
-                  <div class="form-item">
-                    <label> Adanya strategi pencapaian target rencana pendapatan <sup>*</sup></label>
-                    <div class="answer-row">
-                      <div class="answer"> Ada strategi pencapaian target pendapatan yang dapat dipertanggungjawabkan</div>
-                      <div class="score">10</div>
-                    </div>
-                  </div>
-
-            <div class="form-item">
-              <label>Analisis / Komentar<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.              
-              </div>
-            </div>
-
-             <!-- Penilaian Substantif Administratif -->
-        <div class="penilaian-section">
-          <h3>History Penilaian Dokumen Administratif</h3>
-
-            <div class="form-item">
-              <label>Kelembagaan yang menggambarkan posisi jabatan pada UPTD & hubungan wewenang / tanggungjawab sesuai ketentuan<sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Ada struktur dan lengkap</div>
-                <div class="score">10</div>
-              </div>
-            </div>
-
-            <div class="form-item">
-              <label> Adanya prosedur kerja (akuntabilitas berbasis kinerja) <sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer">Ada prosedur yang lengkap</div>
-                <div class="score">10</div>
-              </div>
-            </div>
-          
-            <div class="form-item">
-              <label> Pengelompokkan fungsi (akuntabilitas berbasis kinerja) <sup>*</sup></label>
-              <div class="answer-row">
-                <div class="answer"> Ada pengelompokkan fungsi yang logis dan lengkap</div>
-                <div class="score">10</div>
-              </div>
-            </div>
 
               <div class="form-item">
-                <label> Pengelolaan Sumber Daya Manusia (SDM) <sup>*</sup></label>
+                <label>Adanya peningkatan jumlah pengguna setelah 2 Tahun menerapkan BLUD<sup>*</sup></label>
                 <div class="answer-row">
-                  <div class="answer"> Pengelolaan SDM yang lengkap</div>
+                  <div class="answer">Adanya rencana peningkatan sebesar 50%</div>
                   <div class="score">10</div>
                 </div>
               </div>
 
-                <div class="form-item">
-                  <label>Keabsahan dokumen tata kelola ditandai dengan adanya tanda tangan dan stempel kepala daerah <sup>*</sup></label>
-                  <div class="answer-row">
-                    <div class="answer"> Adanya rencana peningkatan sebesar 50%</div>
-                    <div class="score">10</div>
-                  </div>
+              <div class="form-item">
+                <label>Adanya rencana peningkatan kepuasan konsumen setelah 2 tahun menerapkan BLUD<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Peningkatan rata-rata 5–10%</div>
+                  <div class="score">8</div>
                 </div>
+              </div>
+
+              <div class="form-item">
+                <label>Adanya strategi pencapaian target rencana pendapatan<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Ada strategi pencapaian target pendapatan yang dapat dipertanggungjawabkan</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
 
               <div class="form-item">
                 <label>Analisis / Komentar<sup>*</sup></label>
                 <div class="answer-row">
-                  <div class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.              
+                  <div class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                 </div>
               </div>
             </div>
 
-            <script>
-              // Ambil nama file dari URL, misal 'penilaian.html'
-              const currentPage = window.location.pathname.split("/").pop();
+            <!-- Penilaian Dokumen Administratif -->
+            <div class="penilaian-section">
+              <h3>History Penilaian Dokumen Administratif</h3>
+
+              <div class="form-item">
+                <label>Kelembagaan yang menggambarkan posisi jabatan pada UPTD & hubungan wewenang / tanggungjawab sesuai ketentuan<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Ada struktur dan lengkap</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Adanya prosedur kerja (akuntabilitas berbasis kinerja)<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Ada prosedur yang lengkap</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
             
-              // Ambil semua tab
-              const tabs = document.querySelectorAll(".tab");
-            
-              tabs.forEach(tab => {
-                // Jika href dari tab mengandung nama file aktif → tambahkan class 'active'
-                if (tab.getAttribute("href") === currentPage) {
-                  tab.classList.add("active");
-                }
-              });
-            </script>
-            
+              <div class="form-item">
+                <label>Pengelompokkan fungsi (akuntabilitas berbasis kinerja)<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Ada pengelompokkan fungsi yang logis dan lengkap</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Pengelolaan Sumber Daya Manusia (SDM)<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Pengelolaan SDM yang lengkap</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Keabsahan dokumen tata kelola ditandai dengan adanya tanda tangan dan stempel kepala daerah<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Adanya rencana peningkatan sebesar 50%</div>
+                  <div class="score">10</div>
+                </div>
+              </div>
+
+              <div class="form-item">
+                <label>Analisis / Komentar<sup>*</sup></label>
+                <div class="answer-row">
+                  <div class="answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Sidebar JS (Reusable) -->
+    <script src="/assets/js/sidebar.js"></script>
+
+    <script>
+      // Tab active script
+      const currentPage = window.location.pathname.split("/").pop();
+      const tabs = document.querySelectorAll(".tab");
+      
+      tabs.forEach(tab => {
+        if (tab.getAttribute("href") === currentPage) {
+          tab.classList.add("active");
+        }
+      });
+    </script>
   </body>
 </html>

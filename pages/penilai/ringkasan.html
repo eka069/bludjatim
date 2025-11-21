@@ -1,44 +1,80 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil | BLUD Jawa Timur</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="../../assets/css/penilai/ringkasan.css" />
-  </head>
-  <body>
-    <!-- Header / Navbar -->
-    <header class="navbar">
-      <div class="navbar-left">
-        <img src="../../assets/img/logo.png" alt="Logo BLUD Jatim" class="navbar-logo" />
-        <div class="breadcrumb">
-          <span>Application</span>
-          <span class="separator">></span>
-          <span class="active">Profil</span>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil | BLUD Jawa Timur</title>
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
 
-      <div class="navbar-right">
-        <div class="navbar-actions">
-          <div class="search-box">
-            <input type="text" placeholder="Search..." />
-            <button class="search-btn">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Reusable CSS -->
+  <link rel="stylesheet" href="/assets/css/template.css" />
+  <link rel="stylesheet" href="/assets/css/sidebar.css" />
+  <link rel="stylesheet" href="/assets/css/penilai/ringkasan.css" />
+</head>
+<body class="role-penilai">
+  <!-- NAVBAR -->
+  <nav class="navbar-custom w-100">
+    <div class="container-fluid p-0">
+      <div class="d-flex align-items-center justify-content-between w-100">
+        <div class="d-flex align-items-center">
+          <button class="hamburger-menu" onclick="toggleSidebar()">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M3 12h18M3 6h18M3 18h18"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+          </button>
+          <img
+            src="/assets/img/logo.png"
+            alt="Logo BLUD"
+            class="navbar-logo-img"
+            onerror="this.style.display='none'"
+          />
+          <div class="breadcrumb-custom">
+            <span>Application</span>
+            <span class="separator">></span>
+            <span class="active">Profil</span>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+          <div class="search-box-custom">
+            <input
+              type="text"
+              class="form-control search-input"
+              placeholder="Search..."
+            />
+            <button class="search-btn-custom">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35"
                   stroke="currentColor"
                   stroke-width="2"
                   stroke-linecap="round"
-                  stroke-linejoin="round" />
+                  stroke-linejoin="round"
+                />
               </svg>
             </button>
           </div>
 
-          <button class="notification-btn">
-            <svg width="20" height="22" viewBox="0 0 20 22" fill="none">
+          <button class="notification-btn-custom">
+            <svg width="22" height="24" viewBox="0 0 20 22" fill="none">
               <path
                 d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0"
                 stroke="currentColor"
@@ -49,36 +85,47 @@
             </svg>
             <span class="notification-badge"></span>
           </button>
-          <div class="user-avatar"></div>
+
+          <div class="user-avatar">A</div>
         </div>
       </div>
-    </header>
+    </div>
+  </nav>
 
-    <div class="main-container">
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <div class="main-container w-100">
+    <div class="box-background"></div>
+    <div
+      class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start"
+    >
       <!-- Sidebar -->
-      <aside class="sidebar">
+      <aside class="sidebar-custom" id="sidebar">
         <nav class="sidebar-nav">
-          <!-- Item: Data Permohonan -->
-          <a href="#" class="nav-item active">
-            <img 
-              src="../../assets/img/datapermohonan.png" 
-              alt="Data Permohonan Icon" 
-              width="24" 
-              height="24" 
+          <a href="#" class="nav-item-custom active">
+            <img
+              src="/assets/img/icon_document.png"
+              alt="Data Permohonan"
+              class="nav-icon-img"
             />
             <span>Data Permohonan</span>
           </a>
-      
-          <!-- Item: Monitoring -->
-          <div class="nav-item">
-            <img 
-              src="../../assets/img/monitoring.png" 
-              alt="Monitoring Icon" 
-              width="24" 
-              height="24" 
+
+          <div class="nav-item-custom">
+            <img
+              src="/assets/img/icon_monitoring.png"
+              alt="Monitoring"
+              class="nav-icon-img"
             />
             <span>Monitoring</span>
-            <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <svg
+              class="chevron"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+            >
               <path
                 d="M6 12l4-4-4-4"
                 stroke="currentColor"
@@ -91,24 +138,21 @@
         </nav>
       </aside>
 
-    <!-- Main Content -->
-    <div class="content">
-        <h2 class="profile-title">Profil</h2>
-        <div class="profile-card">
-      
-          <div class="profile-content">
+      <!-- Content -->
+      <div class="content-inner bg-white h-100">
+        <div class="content-title">
+          <h2>Profil</h2>
+        </div>
+
+        <div class="data-card" style="padding: 35px; overflow-y: auto;">
+            <!-- Profile Header -->
             <div class="profile-header">
-              <img src="../../assets/img/logo smk.jpg" alt="Logo Institusi" class="profile-logo" />
-              <div class="profile-info">
-                <h2 class="institution-name">SMK Negeri 1 Bisa Maju</h2>
-                <div class="role-with-badge">
+              <img src="/assets/img/logo-sekolah.png" alt="Logo Institusi" class="profile-logo" onerror="this.style.display='none'" />
+              <div class="flex-grow-1">
+                <h3 class="institution-name">SMK Negeri 1 Bisa Maju</h3>
+                <div class="mb-2">
                   <span class="status-badge">
-                    <img 
-                      src="../../assets/img/belumUPTD.png" 
-                      alt="UPTD Icon" 
-                      width="18" 
-                      height="18" 
-                    />
+                    <img src="/assets/img/icon_uptd.png" alt="UPTD Icon" width="16" height="16" />                                        
                     Belum Memiliki UPTD
                   </span>
                 </div>
@@ -131,227 +175,233 @@
                 </div>
               </div>
             </div>
-    
-             <!-- TAB -->
-          <div class="tab">
-            <a href="pendirian.html" class="tablinks">
-              <img 
-                src="../../assets/img/pendirian.png" 
-                alt="Pendirian Icon" 
-                width="18" 
-                height="18" 
-              />
-              Pendirian
-            </a>
-            
-            <a href="penilaian-submitted.html" class="tablinks">
-              <img 
-                src="../../assets/img/penilaian.png" 
-                alt="Penilaian Icon" 
-                width="18" 
-                height="18" 
-              />
-              Penilaian
-            </a>
-            
-            <a href="ringkasan.html" class="tablinks active">
-              <img 
-                src="../../assets/img/ringkasan.png" 
-                alt="Ringkasan Icon" 
-                width="18" 
-                height="18" 
-              />
-              Ringkasan
-            </a>
-          </div>
 
-          <div class="form-container">
-            <!-- Status Penilaian Section -->
-            <div class="status-section">
+            <!-- TABS -->
+            <div class="tabs-container">
+              <div class="tabs">
+                <a href="pendirian.html" class="tab">
+                  <img 
+                    src="/assets/img/icon_pendirian.png" 
+                    alt="Pendirian Icon"
+                    onerror="this.style.display='none'"
+                  />
+                  Pendirian
+                </a>
+                
+                <a href="penilaian-submitted.html" class="tab">
+                  <img 
+                    src="/assets/img/icon_penilaian.png" 
+                    alt="Penilaian Icon"
+                    onerror="this.style.display='none'"
+                  />
+                  Penilaian
+                </a>
+                
+                <a href="ringkasan.html" class="tab">
+                  <img 
+                    src="/assets/img/icon_ringkasan.png" 
+                    alt="Ringkasan Icon"
+                    onerror="this.style.display='none'"
+                  />
+                  Ringkasan
+                </a>
+              </div>
+            </div>
+
+            <!-- CONTENT CONTAINER -->
+            <div class="form-container">
+              <!-- Status Penilaian Section -->
+              <div class="status-section">
                 Status Penilaian Dokumen Penerapan BLUD Oleh Tim Penilai
-            </div>
+              </div>
 
-            <!-- Table Penilaian -->
-            <table class="penilaian-table">
-                <thead>
-                <tr>
-                    <th>Tim Penilai</th>
-                    <th>Tanggal Penilaian</th>
-                    <th>Detail</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Biro Perekonomian</td>
-                    <td>24-05-2025</td>
-                    <td><a href="#" class="btn-lihat-hasil">LIHAT HASIL PENILAIAN</a></td>
-                </tr>
-                <tr>
-                    <td>Biro Organisasi</td>
-                    <td>15-05-2025</td>
-                    <td><a href="#" class="btn-lihat-hasil">LIHAT HASIL PENILAIAN</a></td>
-                </tr>
-                </tbody>
-            </table>
+              <!-- Table Penilaian -->
+              <div class="table-responsive">
+                <table class="penilaian-table">
+                  <thead>
+                    <tr>
+                      <th>Tim Penilai</th>
+                      <th>Tanggal Penilaian</th>
+                      <th>Detail</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Biro Perekonomian</td>
+                      <td>24-05-2025</td>
+                      <td><a href="#" class="btn-lihat-hasil">LIHAT HASIL PENILAIAN</a></td>
+                    </tr>
+                    <tr>
+                      <td>Biro Organisasi</td>
+                      <td>15-05-2025</td>
+                      <td><a href="#" class="btn-lihat-hasil">LIHAT HASIL PENILAIAN</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
 
-            <!-- Ringkasan Section -->
-            <div class="ringkasan-section">
+              <!-- Ringkasan Section -->
+              <div class="ringkasan-section">
                 Ringkasan Penilaian Dokumen Penerapan BLUD
-            </div>
-            
-            <!-- Accordion 1: Penilaian Dokumen Substantif -->
-            <div class="accordion-item">
-              <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>Penilaian Dokumen Substantif</span>
-                <button class="accordion-toggle">
-                  Lihat Nilai
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M6 9l6 6 6-6"/>
-                  </svg>
-                </button>
               </div>
-              <div class="accordion-content">
-                <div class="score-item">
-                  <span class="score-label">Bentuk Layanan Umum, Frekuensi Aktivitas Layanan</span>
-                  <span class="score-value">-</span>
+              
+              <!-- Accordion 1: Penilaian Dokumen Substantif -->
+              <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                  <span>Penilaian Dokumen Substantif</span>
+                  <button class="accordion-toggle" type="button">
+                    Lihat Nilai
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </button>
                 </div>
-                <div class="score-item">
-                  <span class="score-label">Karakteristik Pasar pada Bisnis BLUD</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Struktur, Tugas dan Fungsi BLUD</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item total">
-                  <span class="score-label">Total</span>
-                  <span class="score-value total-badge">-</span>
+                <div class="accordion-content">
+                  <div class="score-item">
+                    <span class="score-label">Bentuk Layanan Umum, Frekuensi Aktivitas Layanan</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Karakteristik Pasar pada Bisnis BLUD</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Struktur, Tugas dan Fungsi BLUD</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item total">
+                    <span class="score-label">Total</span>
+                    <span class="score-value total-badge">-</span>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <!-- Accordion 2: Penilaian Dokumen Teknis -->
-            <div class="accordion-item">
-              <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>Penilaian Dokumen Teknis</span>
-                <button class="accordion-toggle">
-                  Lihat Nilai
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M6 9l6 6 6-6"/>
-                  </svg>
-                </button>
+              <!-- Accordion 2: Penilaian Dokumen Teknis -->
+              <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                  <span>Penilaian Dokumen Teknis</span>
+                  <button class="accordion-toggle" type="button">
+                    Lihat Nilai
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="accordion-content">
+                  <div class="score-item">
+                    <span class="score-label">Pelayanan lebih layak dengan penerapan BLUD</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Berpotensi meningkatkan pelayanan</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Berpotensi meningkatkan kinerja keuangan</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item total">
+                    <span class="score-label">Total</span>
+                    <span class="score-value total-badge">-</span>
+                  </div>
+                </div>
               </div>
-              <div class="accordion-content">
-                <div class="score-item">
-                  <span class="score-label">Pelayanan lebih layak dengan penerapan BLUD</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Berpotensi meningkatkan pelayanan</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Berpotensi meningkatkan kinerja keuangan</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item total">
-                  <span class="score-label">Total</span>
-                  <span class="score-value total-badge">-</span>
-                </div>
-              </div>
-            </div>
 
-            <!-- Accordion 3: Penilaian Dokumen Administratif -->
-            <div class="accordion-item">
-              <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>Penilaian Dokumen Administratif</span>
-                <button class="accordion-toggle">
-                  Lihat Nilai
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M6 9l6 6 6-6"/>
-                  </svg>
-                </button>
+              <!-- Accordion 3: Penilaian Dokumen Administratif -->
+              <div class="accordion-item">
+                <div class="accordion-header" onclick="toggleAccordion(this)">
+                  <span>Penilaian Dokumen Administratif</span>
+                  <button class="accordion-toggle" type="button">
+                    Lihat Nilai
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M6 9l6 6 6-6"/>
+                    </svg>
+                  </button>
+                </div>
+                <div class="accordion-content">
+                  <div class="score-item">
+                    <span class="score-label">Pernyataan kesanggupan meningkatkan kinerja</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Pola Tata Kelola</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Rencana Strategis Daerah</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Standar Pelayanan Minimal (SPM)</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Laporan Keuangan</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item">
+                    <span class="score-label">Pernyataan bersedia untuk diaudit oleh pemeriksa eksternal pemda sesuai ketentuan perundang-undangan</span>
+                    <span class="score-value">-</span>
+                  </div>
+                  <div class="score-item total">
+                    <span class="score-label">Total</span>
+                    <span class="score-value total-badge">-</span>
+                  </div>
+                </div>
               </div>
-              <div class="accordion-content">
-                <div class="score-item">
-                  <span class="score-label">Pernyataan kesanggupan meningkatkan kinerja</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Pola Tata Kelola</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Rencana Strategis Daerah</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Standar Pelayanan Minimal (SPM)</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Laporan Keuangan</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item">
-                  <span class="score-label">Pernyataan bersedia untuk diaudit oleh oleh pemeriksa eksternal pemda sesuai ketentuan perundang-undangan</span>
-                  <span class="score-value">-</span>
-                </div>
-                <div class="score-item total">
-                  <span class="score-label">Total</span>
-                  <span class="score-value total-badge">-</span>
-                </div>
-              </div>
-            </div>
 
-            <!-- Ringkasan Section -->
-            <div class="ringkasan-section">
+              <!-- Hasil Rekomendasi Section -->
+              <div class="ringkasan-section">
                 Hasil Rekomendasi Penerapan BLUD
-            </div>
+              </div>
 
-            <div class="kotak-final">
+              <div class="kotak-final">
                 -
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  
-  <script>
-    // Ambil semua tab
-    const tabs = document.querySelectorAll('.tab a');
-    // Ambil nama file halaman saat ini
-    const currentPage = window.location.pathname.split('/').pop();
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    // Loop untuk menandai tab yang cocok
-    tabs.forEach(tab => {
-      if (tab.getAttribute('href') === currentPage) {
-        tab.classList.add('active');
-      }
-    });
+    <!-- Sidebar JS (Reusable) -->
+    <script src="/assets/js/sidebar.js"></script>
 
-    function toggleAccordion(header) {
-      const content = header.nextElementSibling;
-      const toggle = header.querySelector('.accordion-toggle');
-      const isActive = content.classList.contains('active');
+    <script>
+      // Tab active script
+      const currentPage = window.location.pathname.split("/").pop();
+      const tabs = document.querySelectorAll(".tab");
       
-      // Close all accordions
-      document.querySelectorAll('.accordion-content').forEach(item => {
-        item.classList.remove('active');
+      tabs.forEach(tab => {
+        if (tab.getAttribute("href") === currentPage) {
+          tab.classList.add("active");
+        }
       });
-      document.querySelectorAll('.accordion-toggle').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // Toggle current accordion
-      if (!isActive) {
-        content.classList.add('active');
-        toggle.classList.add('active');
+
+      // Accordion toggle function
+      function toggleAccordion(header) {
+        const content = header.nextElementSibling;
+        const toggle = header.querySelector('.accordion-toggle');
+        const isActive = content.classList.contains('active');
+        
+        // Close all accordions
+        document.querySelectorAll('.accordion-content').forEach(item => {
+          item.classList.remove('active');
+        });
+        document.querySelectorAll('.accordion-toggle').forEach(item => {
+          item.classList.remove('active');
+        });
+        
+        // Toggle current accordion
+        if (!isActive) {
+          content.classList.add('active');
+          toggle.classList.add('active');
+        }
       }
-    }
-  </script>
-</body>
+    </script>
+  </body>
 </html>

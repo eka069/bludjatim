@@ -1,529 +1,363 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: "Poppins", sans-serif;
-    background-color: #6C430A;
-    color: #333;
-    min-height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* NAVBAR */
-  .navbar {
-    background-color: #6C430A;
-    padding: 12px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-  
-  .navbar-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  
-  .navbar-logo {
-    height: 40px;
-    width: auto;
-  }
-  
-  .breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 14px;
-    margin-left: 67px;
-  }
-  
-  .breadcrumb .separator {
-    color: rgba(255, 255, 255, 0.5);
-  }
-  
-  .breadcrumb .active {
-    color: white;
-    font-weight: 600;
-  }
-  
-  .navbar-right {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-    }
-  
-  .navbar-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .search-box {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .search-box input {
-    width: 280px;
-    padding: 10px 45px 10px 16px;
-    border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    background-color: #EAE5D2;
-    color: rgb(0, 0, 0);
-    font-size: 14px;
-    outline: none;
-    transition: all 0.3s ease;
-  }
-  
-  .search-box input::placeholder {
-    color: rgba(84, 82, 82, 0.6);
-  }
-  
-  .search-box input:focus {
-    background-color: #EAE5D2;
-    border-color: rgba(255, 255, 255, 0.3);
-  }
-  
-  .search-btn {
-    position: absolute;
-    right: 12px;
-    background: none;
-    border: none;
-    color: #6C430A;
-    cursor: pointer;
-    padding: 4px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .notification-btn {
-    position: relative;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
-    padding: 8px;
-    display: flex;
-    align-items: center;
-  }
-  
-  .notification-badge {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    width: 8px;
-    height: 8px;
-    background-color: #e74c3c;
-    border-radius: 50%;
-    border: 2px solid #6C430A;
-  }
-  
-  .user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.2);
-    cursor: pointer;
-  }
-  
-  /*  MAIN CONTAINER  */
-  .main-container {
-    display: flex;
-    height: calc(100vh - 66px);
-    background-color: #6C430A;
-    position: relative;
-    padding: 80px;
-    padding-left: 0;
-  }
-  
-  /* Layer 2: Background #2B4286 di belakang sidebar dan content */
-  .main-container::before {
-    content: '';
-    position: absolute;
-    left: 90px;
-    top: 30px;
-    right: 90px;
-    height: 150px;
-    background-color: #B66C05;
-    border-radius: 20px;
-    z-index: 1;
-  }
-  
-  /* SIDEBAR */
-  .sidebar {
-    width: 280px;
-    background-color: #FFDFB1;
-    padding: 80px 0;
-    position: absolute;
-    left: 30px;
-    top: 50px;
-    bottom: -90px;
-    border-radius: 25px 0px 0 0;
-    z-index: 3;
-  }
-  
-  .sidebar-nav {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    padding: 0 15px;
-  }
-  
-  .nav-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 20px;
-    color: #6C430A;
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    margin-right: 20px;
-  }
-  
-.nav-item img {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  transition: filter 0.3s ease; /* ✨ Tambahkan ini supaya filter ikut transisi */
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
-.nav-item svg {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  transition: stroke 0.3s ease; /* biar SVG ikut berubah halus */
+body {
+  background-color: #6C430A;
 }
 
-.nav-item .chevron {
-  margin-left: auto;
-  width: 18px;
-  height: 18px;
-  transform: rotate(90deg);
+/* ===== NAVBAR ===== */
+.navbar-custom {
+  background-color: #6C430A;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Hover dan Active */
-.nav-item:hover {
-  background-color: #e8c28d;
+.notification-badge {
+  border: 2px solid #6C430A;
+}
+
+.box-background {
+  background-color: #B66C05;
+}
+
+.sidebar-custom {
+  background-color: #FFDFB1;
+}
+
+.nav-item-custom {
+  color: #6C430A;
+}
+
+.nav-item-custom:hover {
+  background-color: rgba(108, 67, 10, 0.46);
   color: white;
 }
 
-.nav-item.active {
+.nav-item-custom.active {
   background-color: #6C430A;
   color: white;
 }
 
-/* Efek ubah warna ikon PNG + chevron SVG saat hover/aktif */
-.nav-item:hover img,
-.nav-item.active img {
+.nav-icon-img {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Filter warna icon untuk role penilai (brown) */
+.role-penilai .nav-icon-img {
+  filter: invert(34%) sepia(85%) saturate(2000%) hue-rotate(16deg) brightness(50%) contrast(100%);
+}
+
+/* Filter warna icon menjadi putih saat active */
+.nav-item-custom.active .nav-icon-img {
   filter: brightness(0) invert(1);
 }
 
-.nav-item:hover .chevron path,
-.nav-item.active .chevron path {
-  stroke: white;
-}
-  
-  /* MAIN CONTENT (PROFIL) */
-  .content {
-    flex: 1;
-    position: relative;
-    margin-left: 320px;
-    z-index: 4;
-  }
-  
-  /* Layer 3: Background abu-abu dengan tulisan "Profil" */
-  .content::before {
-    content: '';
-    position: absolute;
-    left: -30px;
-    top: -30px;
-    right: -30px;
-    bottom: -90px;
-    background-color: #F1F5F8;
-    border-radius: 25px 25px 0 0;
-    z-index: 2;
-  }
-  
-  .profile-card {
-    background-color: #FFFFFF;
-    border-radius: 12px;
-    border: 1px solid #D1DCE5;
-    padding: 35px;
-    margin: 50px auto 0 auto; /* semula 20px, sekarang 50px agar lebih turun */
-    position: relative;
-    z-index: 3;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-    width:100%;
-    height: calc(100vh - 180px);
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    scroll-behavior: smooth;
-  }
-  
-  .profile-title {
-    position: absolute;
-    top: 0px; /* posisinya tetap di atas card */
-    left: 5px;
-    font-size: 22px;
-    font-weight: 600;
-    color: #373739; /* biru tua agar kontras tapi tetap bersih */
-    background: none; /* hapus background */
-    padding: 0;
-    border-radius: 0;
-    z-index: 5;
-  }
-  
-  .profile-card::-webkit-scrollbar {
-    width: 6px;
-  }
-  
-  .profile-card::-webkit-scrollbar-track {
-    background: #f8f9fa;
-    border-radius: 10px;
-  }
-  
-  .profile-card::-webkit-scrollbar-thumb {
-    background: #b8c3d6;
-    border-radius: 10px;
-  }
-  
-  .profile-card::-webkit-scrollbar-thumb:hover {
-    background: #98a8c3;
-  }
-  
-  .profile-card-title {
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 25px;
-    padding-bottom: 15px;
-  }
-  
-  .profile-header {
-    display: flex;
-    align-items: flex-start;
-    gap: 25px;
-    margin-bottom: 35px;
-  }
-  
-  .profile-logo {
-    width: 110px;
-    height: 110px;
-    object-fit: contain;
-  }
-  
-  .profile-info {
-    flex: 1;
-  }
-  
-  .institution-name {
-    font-size: 22px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-  }
-  
-  .role {
-    font-size: 15px;
-    color: #666;
-    margin-bottom: 18px;
-  }
-  
-  .location-info {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .info-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #555;
-    font-size: 14px;
-  }
-  
-  .info-item svg {
-    flex-shrink: 0;
-  }
-  
-  /* TAB */
-.tab {
-  border-bottom: 2px solid #e6ecf5;
-  margin-bottom: 1.2rem;
-  display: flex;
-  gap: 1rem;
+/* Filter warna icon menjadi putih saat hover */
+.nav-item-custom:hover .nav-icon-img {
+  filter: brightness(0) invert(1);
 }
 
-.tab a {
-  background: none;
-  border: none;
+.content-container {
+  background-color: #FFDFB1;
+}
+
+.content-title h2 {
+  color: #6C430A;
+}
+
+/* ===== MODIFIKASI UNTUK SCROLLABLE CONTENT ===== */
+.content-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+.content-title {
+  padding: 12px 35px;
+  border-bottom: 2px solid #f0f0f0;
+  flex-shrink: 0;
+  background: white;
+}
+
+.content-title h2 {
+  color: #6C430A;
+  margin: 0;
+}
+
+.data-card {
+  flex: 1;
+  overflow-y: auto;
+  padding: 35px;
+}
+
+/* Additional styles for profile page */
+/* ===== PROFILE HEADER ===== */
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  margin-bottom: 35px;
+}
+
+.profile-logo {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+}
+
+.institution-name {
+  font-size: 22px;
   font-weight: 600;
-  padding: 0.6rem 1.2rem;
-  border-bottom: 3px solid transparent;
-  cursor: pointer;
-  color: #333;
-  transition: 0.2s ease;
-  font-size: 14px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  border-radius: 6px 6px 0 0;
+  color: #1a1a1a;
+  margin-bottom: 8px;
 }
 
-.tab a:hover {
-  background-color: #f5f7fa;
-}
-
-.tab a.active {
-  border-color: #FF9500;
-  color: #354050;
-  background-color: #f5f7fa;
-}
-
-  
-/* Badge Status UPTD */
-.status-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background-color: #F8C987;
-  color: white;
-  padding: 6px 14px;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  margin-left: 12px;
-  vertical-align: middle;
-}
-
-/* Role dengan Badge */
-.role-with-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.role {
+  font-size: 15px;
+  color: #666;
   margin-bottom: 18px;
 }
 
-.role-with-badge .role {
-  margin-bottom: 0;
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #F8C987;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
 }
 
-  /* FORM CONTAINER */
-  .form-container {
-    margin-top: 15px;
+.status-badge img {
+  width: 16px;
+  height: 16px;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #555;
+  font-size: 14px;
+}
+
+.tabs-container {
+  border-bottom: 2px solid #E6ECF5;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+}
+
+.tab {
+  padding: 12px 20px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  text-decoration: none;
+  border-radius: 6px 6px 0 0;
+  background: none;
+}
+
+.tab:hover {
+  background-color: #F5F7FA;
+  color: #333;
+}
+
+.tab.active {
+  color: #354050;
+  border-bottom-color: #FF9500;
+  background-color: #F5F7FA;
+}
+
+.tab img {
+  width: 20px;
+  height: 20px;
+}
+
+.tab:hover {
+  color: #B66C05;
+}
+
+.tab.active {
+  color: #000000;
+  border-bottom-color: #B66C05;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.latar-belakang-box {
+  background-color: white;
+  border: 1px solid #D1DCE5;
+  border-radius: 8px;
+  padding: 16px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: justify;
+  margin-bottom: 25px;
+}
+
+.latar-belakang-box p {
+  margin: 0;
+}
+
+.requirements-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #222;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.requirements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #B66C05;
+  padding: 14px 20px;
+  border-radius: 8px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.requirement-item span {
+  flex: 1;
+}
+
+.btn-view-file {
+  background-color: white;
+  color: #B66C05;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-view-file:hover {
+  background-color: #F0F4FF;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-title {
+    padding: 15px;
   }
-  
-  .form-group {
-    margin-bottom: 20px;
+
+  .content-title h2 {
+    font-size: 18px;
   }
-  
-  .form-group label {
-    display: block;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 8px;
-    font-size: 14px;
+
+  .data-card {
+    padding: 15px !important;
   }
-  
-  /* Latar Belakang Box */
-  .latar-belakang-box {
-    background-color: white;
-    border: 1px solid #d1dce5;
-    border-radius: 8px;
-    padding: 16px;
-    line-height: 1.6;
-    color: #555;
-    font-size: 13px;
-    text-align: justify;
+
+  .profile-header {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 15px;
   }
-  
-  .latar-belakang-box p {
+
+  .profile-logo {
+    width: 70px;
+    height: 70px;
     margin: 0;
   }
-  
-  .form-container h4 {
-    margin-top: 25px;
-    margin-bottom: 15px;
+
+  .profile-info {
+    flex: 1;
+    text-align: left;
+  }
+
+  .institution-name {
     font-size: 16px;
-    font-weight: 600;
-    color: #222;
-  }
-  
-  /* Isi form rapi */
-  .profile-card .form-container .form-group {
-    margin-bottom: 16px;
-  }
-  .profile-card .form-container label {
     display: block;
-    font-weight: 500;
-    color: #333;
-    margin-bottom: 6px;
   }
-  .profile-card .form-container input[type="file"] {
+
+  .status-badge {
+    font-size: 11px;
+    padding: 4px 10px;
+    margin-left: 0;
+    margin-top: 6px;
+    display: inline-flex;
+  }
+
+  .status-badge img {
+    width: 14px;
+    height: 14px;
+  }
+
+  .profile-subtitle {
+    font-size: 12px;
+  }
+
+  .profile-details {
+    align-items: flex-start;
+  }
+
+  .profile-detail-item {
+    font-size: 11px;
+  }
+
+  .profile-detail-item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .tab {
+    flex: 1;
+    min-width: 70px;
+    justify-content: center;
+  }
+
+  .requirement-item {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .btn-view-file {
     width: 100%;
-    padding: 6px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    background-color: #fff;
   }
-  .profile-card .form-container h4 {
-    margin-top: 20px;
-    font-size: 16px;
-    color: #222;
-  }
-  
-    /* File Upload Items */
-    .file-upload-item {
-      background-color: #B66C05;
-      color: white;
-      border-radius: 8px;
-      padding: 14px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 12px;
-      font-size: 14px;
-    }
-  
-    .file-upload-item span {
-      flex: 1;
-      font-weight: 500;
-    }
-  
-    .btn-lihat-file {
-      background-color: white;
-      color: #B66C05;
-      border: none;
-      padding: 8px 24px;
-      border-radius: 6px;
-      font-weight: 600;
-      cursor: pointer;
-      font-size: 13px;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-  
-    .btn-lihat-file:hover {
-      background-color: #f0f4ff;
-      transform: translateY(-1px);
-    }
-  
-    /* Status Check Button */
-    .status-check {
-      margin-top: 30px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
+}
