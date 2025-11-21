@@ -3,13 +3,343 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil | BLUD Jawa Timur</title><!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profil | BLUD Jawa Timur</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Reusable CSS -->
+    <link rel="stylesheet" href="/assets/css/template.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/penilai/penilaian.css" />
+  </head>
+  <body class="role-penilai penilaian-substantif">
+    <!-- NAVBAR -->
+    <nav class="navbar-custom w-100">
+      <div class="container-fluid p-0">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <div class="d-flex align-items-center">
+            <button class="hamburger-menu" onclick="toggleSidebar()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <img src="/assets/img/logo.png" alt="Logo BLUD" class="navbar-logo-img" onerror="this.style.display='none'" />
+            <div class="breadcrumb-custom">
+              <span>Application</span>
+              <span class="separator">></span>
+              <span class="active">Profil</span>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="search-box-custom">
+              <input type="text" class="form-control search-input" placeholder="Search..." />
+              <button class="search-btn-custom">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <button class="notification-btn-custom">
+              <svg width="22" height="24" viewBox="0 0 20 22" fill="none">
+                <path d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="notification-badge"></span>
+            </button>
+
+            <div class="user-avatar">A</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-container w-100">
+      <div class="box-background"></div>
+      <div class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar-custom" id="sidebar">
+          <nav class="sidebar-nav">
+            <a href="#" class="nav-item-custom active">
+              <img src="/assets/img/icon_document.png" alt="Data Permohonan" class="nav-icon-img" />
+              <span>Data Permohonan</span>
+            </a>
+
+            <div class="nav-item-custom">
+              <img src="/assets/img/icon_monitoring.png" alt="Monitoring" class="nav-icon-img" />
+              <span>Monitoring</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="content-inner bg-white h-100">
+          <div class="content-title">
+            <h2>Profil</h2>
+          </div>
+
+          <div class="profile-card">
+            <!-- Profile Header -->
+            <div class="profile-header">
+              <img src="/assets/img/logo-sekolah.png" alt="Logo Institusi" class="profile-logo" onerror="this.style.display='none'" />
+              <div class="flex-grow-1">
+                <h3 class="institution-name">SMK Negeri 1 Bisa Maju</h3>
+                <div class="mb-2">
+                  <span class="status-badge">
+                    <img src="/assets/img/icon_uptd.png" alt="UPTD Icon" width="16" height="16" />                                        
+                    Belum Memiliki UPTD
+                  </span>
+                </div>
+                <p class="role">Sekretariat (Admin)</p>
+                <div class="location-info">
+                  <div class="info-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 22V12h6v10" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Surabaya, Jawa Timur</span>
+                  </div>
+                  <div class="info-item">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 12v5c3 2 7 2 10 0v-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <span>Biro Perekonomian</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" href="#pendirian" data-bs-toggle="tab">
+                  <img src="/assets/img/icon_pendirian.png" alt="Pendirian" width="18" height="18" />
+                  Pendirian
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#penilaian" data-bs-toggle="tab">
+                  <img src="/assets/img/icon_penilaian.png" alt="Penilaian" width="18" height="18" />
+                  Penilaian
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#ringkasan" data-bs-toggle="tab">
+                  <img src="/assets/img/icon_ringkasan.png" alt="Ringkasan" width="18" height="18" />
+                  Ringkasan
+                </a>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="penilaian">
+                <form id="penilaianForm">
+                  <div class="form-header">
+                    Penilaian Dokumen Substantif (1/3)
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Layanan umum sesuai dengan Permendagri 79 tentang BLUD (Layanan Kesehatan, Pendidikan dan layanan lainnya)
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="layanan_umum" required>
+                        <option value="">Pilih...</option>
+                        <option value="layanan_ada">Adanya layanan umum</option>
+                        <option value="layanan_tidak_ada">Tidak ada layanan umum</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Frekuensi aktivitas layanan dalam periode waktu tertentu
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="frekuensi_aktivitas" required>
+                        <option value="">Pilih...</option>
+                        <option value="harian">Frekuensi layanan dalam periode hari</option>
+                        <option value="mingguan">Frekuensi layanan dalam periode minggu</option>
+                        <option value="bulanan">Frekuensi layanan dalam periode bulan</option>
+                        <option value="triwulanan">Frekuensi layanan dalam periode triwulan</option>
+                        <option value="semesteran">Frekuensi layanan dalam periode semester</option>
+                        <option value="tidak_ada_frekuensi">Tidak ada frekuensi aktivitas layanan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Pengelolaan Dana khusus (Dana Bergulir, Dana perumahan)
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pengelolaan_dana_khusus" required>
+                        <option value="">Pilih...</option>
+                        <option value="mengelola_dana_khusus">Mengelola dana khusus</option>
+                        <option value="tidak_mengelola_dana_khusus">Tidak mengelola dana khusus</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Pengelolaan kawasan tertentu (kawasan ekonomi, kawasan wisata, dan Pasar)
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pengelolaan_kawasan" required>
+                        <option value="">Pilih...</option>
+                        <option value="mengelola_kawasan">Mengelola kawasan tertentu</option>
+                        <option value="tidak_mengelola_kawasan">Tidak mengelola kawasan tertentu</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya instansi, lembaga, atau masyarakat umum yang menggunakan layanan BLUD
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pengguna_layanan" required>
+                        <option value="">Pilih...</option>
+                        <option value="pemerintah_swasta_masyarakat">Instansi pemerintah, sektor privat, dan masyarakat umum</option>
+                        <option value="pemerintah_pusat_daerah">Instansi pemerintah, baik pusat maupun daerah</option>
+                        <option value="tidak_ada_pengguna">Tidak ada pengguna layanan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Ketersediaan barang/jasa oleh instansi pemerintah maupun swasta
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="ketersediaan_barang_jasa" required>
+                        <option value="">Pilih...</option>
+                        <option value="disediakan_pemerintah_swasta">Disediakan oleh instansi/organisasi pemerintah dan swasta</option>
+                        <option value="disediakan_salah_satu">Hanya disediakan oleh salah satu (pemerintah atau swasta)</option>
+                        <option value="tidak_ada_penyedia">Tidak ada penyedia</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya unsur barang/jasa semi publik
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="unsur_semi_publik" required>
+                        <option value="">Pilih...</option>
+                        <option value="ada_unsur_semi_publik">Adanya unsur-unsur barang/jasa semi publik</option>
+                        <option value="tidak_ada_unsur_semi_publik">Tidak ada unsur-unsur barang/jasa semi publik</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya Struktur Pengelola Keuangan dan Barang dan Struktur Pengelola teknis Unit Usaha
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="struktur_pengelola" required>
+                        <option value="">Pilih...</option>
+                        <option value="struktur_lengkap">Ada Struktur Pengelola Keuangan dan Barang serta Struktur Pengelola teknis Unit Usaha</option>
+                        <option value="struktur_sebagian">Ada Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha</option>
+                        <option value="struktur_tidak_ada">Tidak ada Struktur Pengelola Keuangan dan Barang maupun Struktur Pengelola teknis Unit Usaha</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya Analisis Kelayakan Pelimpahan Jasa Rencana Pelimpahan
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="analisis_kelayakan" required>
+                        <option value="">Pilih...</option>
+                        <option value="analisis_dan_rencana_ada">Ada analisis kebutuhan pelatihan dan rencana pelatihan SDM pengelola BLUD</option>
+                        <option value="analisis_atau_rencana_ada">Ada analisis kebutuhan pelatihan atau rencana pelatihan SDM pengelola BLUD</option>
+                        <option value="analisis_tidak_ada">Tidak ada analisis kebutuhan pelatihan dan rencana pelatihan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="form-label">
+                      Analisis / Komentar
+                      <span class="required">*</span>
+                    </label>
+                    <textarea class="form-control form-textarea" name="analisis_komentar" rows="4" placeholder="Masukkan analisis atau komentar..." required></textarea>
+                  </div>
+
+                  <div class="d-flex justify-content-center gap-3 mt-4">
+                    <button type="submit" class="btn btn-lanjut">Lanjut</button>
+                    <button type="button" class="btn btn-batal">Batal</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Sidebar JS (Reusable) -->
+    <script src="/assets/js/sidebar.js"></script>
+    
+    <!-- Penilaian Custom Select JS -->
+    <script src="/assets/js/penilai/penilaian.js"></script>
+  </body>
+</html>
+    
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts -->
+>>>>>>> andin
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+<<<<<<< HEAD
     <link rel="stylesheet" href="../../assets/css/penilaian.css" />
   </head>
   <body>
@@ -117,6 +447,96 @@
                     width="16" 
                     height="16" 
                     />                                        
+=======
+
+    <!-- Reusable CSS -->
+    <link rel="stylesheet" href="/assets/css/template.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+    <link rel="stylesheet" href="/assets/css/penilai/penilaian.css" />
+  </head>
+  <body class="role-penilai penilaian-substantif">
+    <!-- NAVBAR -->
+    <nav class="navbar-custom w-100">
+      <div class="container-fluid p-0">
+        <div class="d-flex align-items-center justify-content-between w-100">
+          <div class="d-flex align-items-center">
+            <button class="hamburger-menu" onclick="toggleSidebar()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 12h18M3 6h18M3 18h18" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <img src="/assets/img/logo.png" alt="Logo BLUD" class="navbar-logo-img" onerror="this.style.display='none'" />
+            <div class="breadcrumb-custom">
+              <span>Application</span>
+              <span class="separator">></span>
+              <span class="active">Profil</span>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center gap-3">
+            <div class="search-box-custom">
+              <input type="text" class="form-control search-input" placeholder="Search..." />
+              <button class="search-btn-custom">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+
+            <button class="notification-btn-custom">
+              <svg width="22" height="24" viewBox="0 0 20 22" fill="none">
+                <path d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <span class="notification-badge"></span>
+            </button>
+
+            <div class="user-avatar">A</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Sidebar Overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <div class="main-container w-100">
+      <div class="box-background"></div>
+      <div class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar-custom" id="sidebar">
+          <nav class="sidebar-nav">
+            <a href="#" class="nav-item-custom active">
+              <img src="/assets/img/icon_document.png" alt="Data Permohonan" class="nav-icon-img" />
+              <span>Data Permohonan</span>
+            </a>
+
+            <div class="nav-item-custom">
+              <img src="/assets/img/icon_monitoring.png" alt="Monitoring" class="nav-icon-img" />
+              <span>Monitoring</span>
+              <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M6 12l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="content-inner bg-white h-100">
+          <div class="content-title">
+            <h2>Profil</h2>
+          </div>
+
+          <div class="profile-card">
+            <!-- Profile Header -->
+            <div class="profile-header">
+              <img src="/assets/img/logo-sekolah.png" alt="Logo Institusi" class="profile-logo" onerror="this.style.display='none'" />
+              <div class="flex-grow-1">
+                <h3 class="institution-name">SMK Negeri 1 Bisa Maju</h3>
+                <div class="mb-2">
+                  <span class="status-badge">
+                    <img src="/assets/img/icon_uptd.png" alt="UPTD Icon" width="16" height="16" />                                        
+>>>>>>> andin
                     Belum Memiliki UPTD
                   </span>
                 </div>
@@ -124,6 +544,7 @@
                 <div class="location-info">
                   <div class="info-item">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+<<<<<<< HEAD
                       <path
                         d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z"
                         stroke="#666"
@@ -138,11 +559,16 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
+=======
+                      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M9 22V12h6v10" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+>>>>>>> andin
                     </svg>
                     <span>Surabaya, Jawa Timur</span>
                   </div>
                   <div class="info-item">
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+<<<<<<< HEAD
                       <path
                         d="M22 10v6M2 10l10-5 10 5-10 5z"
                         stroke="#666"
@@ -157,6 +583,10 @@
                         stroke-linecap="round"
                         stroke-linejoin="round"
                       />
+=======
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6 12v5c3 2 7 2 10 0v-5" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+>>>>>>> andin
                     </svg>
                     <span>Biro Perekonomian</span>
                   </div>
@@ -164,6 +594,7 @@
               </div>
             </div>
 
+<<<<<<< HEAD
             <!-- TAB -->
             <div class="tab">
               <input type="radio" id="tab-pendirian" name="tabs" hidden />
@@ -359,13 +790,206 @@
               <div class="form-buttons">
                 <button class="btn-lanjut">Lanjut</button>
                 <button class="btn-batal">Batal</button>
+=======
+            <!-- Tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" href="#pendirian" data-bs-toggle="tab">
+                  <img src="/assets/img/icon_pendirian.png" alt="Pendirian" width="18" height="18" />
+                  Pendirian
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#penilaian" data-bs-toggle="tab">
+                  <img src="/assets/img/icon_penilaian.png" alt="Penilaian" width="18" height="18" />
+                  Penilaian
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#ringkasan" data-bs-toggle="tab">
+                  <img src="/assets/img/icon_ringkasan.png" alt="Ringkasan" width="18" height="18" />
+                  Ringkasan
+                </a>
+              </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+              <div class="tab-pane fade show active" id="penilaian">
+                <form id="penilaianForm">
+                  <div class="form-header">
+                    Penilaian Dokumen Substantif (1/3)
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Layanan umum sesuai dengan Permendagri 79 tentang BLUD (Layanan Kesehatan, Pendidikan dan layanan lainnya)
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="layanan_umum" required>
+                        <option value="">Pilih...</option>
+                        <option value="layanan_ada">Adanya layanan umum</option>
+                        <option value="layanan_tidak_ada">Tidak ada layanan umum</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Frekuensi aktivitas layanan dalam periode waktu tertentu
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="frekuensi_aktivitas" required>
+                        <option value="">Pilih...</option>
+                        <option value="harian">Frekuensi layanan dalam periode hari</option>
+                        <option value="mingguan">Frekuensi layanan dalam periode minggu</option>
+                        <option value="bulanan">Frekuensi layanan dalam periode bulan</option>
+                        <option value="triwulanan">Frekuensi layanan dalam periode triwulan</option>
+                        <option value="semesteran">Frekuensi layanan dalam periode semester</option>
+                        <option value="tidak_ada_frekuensi">Tidak ada frekuensi aktivitas layanan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Pengelolaan Dana khusus (Dana Bergulir, Dana perumahan)
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pengelolaan_dana_khusus" required>
+                        <option value="">Pilih...</option>
+                        <option value="mengelola_dana_khusus">Mengelola dana khusus</option>
+                        <option value="tidak_mengelola_dana_khusus">Tidak mengelola dana khusus</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Pengelolaan kawasan tertentu (kawasan ekonomi, kawasan wisata, dan Pasar)
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pengelolaan_kawasan" required>
+                        <option value="">Pilih...</option>
+                        <option value="mengelola_kawasan">Mengelola kawasan tertentu</option>
+                        <option value="tidak_mengelola_kawasan">Tidak mengelola kawasan tertentu</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya instansi, lembaga, atau masyarakat umum yang menggunakan layanan BLUD
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="pengguna_layanan" required>
+                        <option value="">Pilih...</option>
+                        <option value="pemerintah_swasta_masyarakat">Instansi pemerintah, sektor privat, dan masyarakat umum</option>
+                        <option value="pemerintah_pusat_daerah">Instansi pemerintah, baik pusat maupun daerah</option>
+                        <option value="tidak_ada_pengguna">Tidak ada pengguna layanan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Ketersediaan barang/jasa oleh instansi pemerintah maupun swasta
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="ketersediaan_barang_jasa" required>
+                        <option value="">Pilih...</option>
+                        <option value="disediakan_pemerintah_swasta">Disediakan oleh instansi/organisasi pemerintah dan swasta</option>
+                        <option value="disediakan_salah_satu">Hanya disediakan oleh salah satu (pemerintah atau swasta)</option>
+                        <option value="tidak_ada_penyedia">Tidak ada penyedia</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya unsur barang/jasa semi publik
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="unsur_semi_publik" required>
+                        <option value="">Pilih...</option>
+                        <option value="ada_unsur_semi_publik">Adanya unsur-unsur barang/jasa semi publik</option>
+                        <option value="tidak_ada_unsur_semi_publik">Tidak ada unsur-unsur barang/jasa semi publik</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya Struktur Pengelola Keuangan dan Barang dan Struktur Pengelola teknis Unit Usaha
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="struktur_pengelola" required>
+                        <option value="">Pilih...</option>
+                        <option value="struktur_lengkap">Ada Struktur Pengelola Keuangan dan Barang serta Struktur Pengelola teknis Unit Usaha</option>
+                        <option value="struktur_sebagian">Ada Struktur Pengelola Keuangan dan Barang atau Struktur Pengelola teknis Unit Usaha</option>
+                        <option value="struktur_tidak_ada">Tidak ada Struktur Pengelola Keuangan dan Barang maupun Struktur Pengelola teknis Unit Usaha</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label class="form-label">
+                      Adanya Analisis Kelayakan Pelimpahan Jasa Rencana Pelimpahan
+                      <span class="required">*</span>
+                    </label>
+                    <div class="custom-select">
+                      <select name="analisis_kelayakan" required>
+                        <option value="">Pilih...</option>
+                        <option value="analisis_dan_rencana_ada">Ada analisis kebutuhan pelatihan dan rencana pelatihan SDM pengelola BLUD</option>
+                        <option value="analisis_atau_rencana_ada">Ada analisis kebutuhan pelatihan atau rencana pelatihan SDM pengelola BLUD</option>
+                        <option value="analisis_tidak_ada">Tidak ada analisis kebutuhan pelatihan dan rencana pelatihan</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <label class="form-label">
+                      Analisis / Komentar
+                      <span class="required">*</span>
+                    </label>
+                    <textarea class="form-control form-textarea" name="analisis_komentar" rows="4" placeholder="Masukkan analisis atau komentar..." required></textarea>
+                  </div>
+
+                  <div class="d-flex justify-content-center gap-3 mt-4">
+                    <button type="submit" class="btn btn-lanjut">Lanjut</button>
+                    <button type="button" class="btn btn-batal">Batal</button>
+                  </div>
+                </form>
+>>>>>>> andin
               </div>
             </div>
           </div>
         </div>
+<<<<<<< HEAD
       </main>
     </div>
 
     <script src="js/penilaian.js"></script>
+=======
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Sidebar JS (Reusable) -->
+    <script src="/assets/js/sidebar.js"></script>
+    
+    <!-- Penilaian Custom Select JS -->
+    <script src="/assets/js/penilai/penilaian.js"></script>
+>>>>>>> andin
   </body>
 </html>

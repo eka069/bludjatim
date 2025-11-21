@@ -1,430 +1,445 @@
-<!DOCTYPE html>
-<html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasil Rekomendasi | BLUD Jawa Timur</title>
+/* Content Title */
+.content-title h2 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
 
-    <!-- Bootstrap CSS -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+/* Filter Section */
+.filter-section {
+  margin-bottom: 24px;
+  padding: 20px 24px;
+  background: #f9fafb;
+  border-radius: 8px;
+}
 
-    <!-- Bootstrap Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
-    />
+/* Search Filter Box */
+.search-filter-box {
+  position: relative;
+  width: 100%;
+}
 
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+.search-filter-input {
+  padding: 12px 45px 12px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
 
-    <!-- Reusable CSS -->
-    <link rel="stylesheet" href="/assets/css/template.css" />
-    <link rel="stylesheet" href="/assets/css/sidebar.css" />
+.search-filter-input:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  outline: none;
+}
 
-    <link rel="stylesheet" href="/assets/css/hasil-rekomendasi.css" />
-  </head>
-  <body>
-    <!-- NAVBAR -->
-    <nav class="navbar-custom w-100">
-      <div class="container-fluid p-0">
-        <div class="d-flex align-items-center justify-content-between w-100">
-          <div class="d-flex align-items-center">
-            <button class="hamburger-menu" onclick="toggleSidebar()">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  d="M3 12h18M3 6h18M3 18h18"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </button>
-            <img
-              src="/assets/img/logo.png"
-              alt="Logo BLUD"
-              class="navbar-logo-img"
-              onerror="this.style.display='none'"
-            />
-            <div class="breadcrumb-custom">
-              <span>Application</span>
-              <span class="separator">></span>
-              <span>Usulan Pendirian</span>
-              <span class="separator">></span>
-              <span class="active">Hasil Rekomendasi</span>
-            </div>
-          </div>
+.search-filter-btn {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
-          <div class="d-flex align-items-center gap-3">
-            <div class="search-box-custom">
-              <input
-                type="text"
-                class="form-control search-input"
-                placeholder="Search..."
-              />
-              <button class="search-btn-custom">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path
-                    d="M9 17A8 8 0 1 0 9 1a8 8 0 0 0 0 16zM19 19l-4.35-4.35"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </button>
-            </div>
+.search-filter-btn:hover {
+  color: #1e3a8a;
+}
 
-            <button class="notification-btn-custom">
-              <svg width="22" height="24" viewBox="0 0 20 22" fill="none">
-                <path
-                  d="M16 7A6 6 0 1 0 4 7c0 7-3 9-3 9h18s-3-2-3-9zM11.73 20a2 2 0 0 1-3.46 0"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span class="notification-badge"></span>
-            </button>
+.search-filter-btn i {
+  font-size: 16px;
+}
 
-            <div class="user-avatar">A</div>
-          </div>
-        </div>
-      </div>
-    </nav>
+/* Status Select */
+.status-select {
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
-    <!-- Sidebar Overlay -->
-    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+.status-select:focus {
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1);
+  outline: none;
+}
 
-    <!-- Main Container -->
-    <div class="main-container w-100">
-      <div class="box-background"></div>
-      <div
-        class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
-        <!-- Sidebar -->
-        <aside class="sidebar-custom" id="sidebar">
-          <nav class="sidebar-nav">
-            <a href="/dashboard.html" class="nav-item-custom">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M9 22V12h6v10"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span>Dashboard</span>
-            </a>
+/* Filter Button */
+.btn-filter-custom {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
 
-            <!-- Usulan Pendirian dengan Submenu -->
-            <div>
-              <a href="/pages/opd/usulan_pendirian.html" class="nav-item-custom active" id="usulanPendirianMenu">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M11 12h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 14"/>
-                  <path d="m7 18 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/>
-                  <path d="m2 13 6 6"/>
-                </svg>
-                <span>Usulan Pendirian</span>
-                <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
-                  <path d="M4 6l4 4 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
-              
-              <!-- Submenu -->
-              <div class="submenu show" id="usulanSubmenu">
-                <a href="/pages/opd/list_permohonan.html" class="submenu-item active">
-                  Permohonan
-                </a>
-                <a href="/pages/opd/hasil-rekomendasi.html" class="submenu-item">
-                  Hasil Rekomendasi
-                </a>
-              </div>
-            </div>
+.btn-filter-custom:hover {
+  background-color: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+}
 
-            <a href="/pages/blud/profil.html" class="nav-item-custom">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <circle
-                  cx="12"
-                  cy="7"
-                  r="4"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span>Profil</span>
-            </a>
+.btn-filter-custom i {
+  font-size: 14px;
+}
 
-            <!-- <a href="monitoring.html" class="nav-item-custom">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <rect
-                  x="2"
-                  y="3"
-                  width="20"
-                  height="14"
-                  rx="2"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M8 21h8M12 17v4"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span>Monitoring</span>
-              <svg
-                class="chevron"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  d="M6 12l4-4-4-4"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
+/* Reset Button */
+.btn-reset-custom {
+  background-color: white;
+  color: #374151;
+  padding: 10px 20px;
+  border:  2px solid #083c97;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
 
-            <a href="evaluasi-kinerja.html" class="nav-item-custom">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-              >
-                <path
-                  d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14 2v6h6M16 13H8M16 17H8M10 9H8"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span>Evaluasi Kinerja</span>
-            </a> -->
-          </nav>
-        </aside>
+.btn-reset-custom:hover {
+  background-color: #f9fafb;
+  border-color: #083c97;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
 
-        <!-- Content -->
-        <div class="content-inner bg-white h-100">
-          <div class="content-title">
-            <h2>Hasil Rekomendasi Usulan Pendirian BLUD </h2>
-          </div>
+.btn-reset-custom i {
+  font-size: 14px;
+}
 
-          <!-- Filter Section -->
-          <div class="filter-section">
-            <div class="row g-3 align-items-center">
-              <!-- Search Box -->
-              <div class="col-lg-6 col-md-6">
-                <div class="search-filter-box">
-                  <input
-                    type="text"
-                    class="form-control search-filter-input"
-                    placeholder="Cari berdasarkan no. permohonan atau nama calon BLUD"
-                  />
-                  <button class="search-filter-btn">
-                    <i class="bi bi-search"></i>
-                  </button>
-                </div>
-              </div>
+/* Buat Usulan Baru Button */
+.btn-buat-usulan {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  width: 100%;
+  justify-content: center;
+}
 
-              <!-- !-- Status Dropdown --> 
-              <div class="col-lg-3 col-md-3 col-sm-6">
-                <select class="form-select status-select">
-                  <option selected>Hasil Rekomendasi</option>
-                  <option value="diterima">Diterima</option>
-                  <option value="ditolak">Ditolak</option>
-                  <option value="revisi">Revisi</option>
-                </select>
-              </div>
+.btn-buat-usulan:hover {
+  background-color: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+}
 
-              <!-- Filter Button -->
-              <div class="col-lg-auto col-md-3 col-sm-6">
-                <button class="btn btn-filter-custom">
-                  <i class="bi bi-funnel"></i>
-                  Filter
-                </button>
-              </div>
+.btn-buat-usulan i {
+  font-size: 16px;
+  font-weight: 700;
+}
 
-              <!-- Reset Button -->
-              <div class="col-lg-auto col-md-auto col-sm-6">
-                <button class="btn btn-reset-custom">
-                  <i class="bi bi-arrow-clockwise"></i>
-                  Reset
-                </button>
-              </div>  
+/* Table Container */
+.table-container {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
 
-          <!-- Table -->
-          <div class="table-container">
-            <div class="table-responsive">
-              <table class="table table-hover table-usulan mb-0">
-                <thead>
-                  <tr>
-                    <th scope="col">NOMOR PERMOHONAN</th>
-                    <th scope="col">NAMA CALON BLUD</th>
-                    <th scope="col">TANGGAL PENGAJUAN</th>
-                    <th scope="col">STATUS</th>
-                    <th scope="col">HASIL REKOMENDASI</th>
-                    <th scope="col">ACTIONS</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                     <td>BLUD-008</td>
-                    <td>SMK Negeri 1 Bisa Maju</td>
-                    <td>13 November 2025</td>
-                    <td><span class="badge">DONE</span></td>
-                    <td><span class="badge">Diterima</span></td>
-                    <td>
-                      <div class="d-flex justify-content-center gap-2">
-                        <a href="detail_data.html" class="btn btn-detail-custom d-inline-flex align-items-center">
-                          <i class="bi bi-eye"></i>
-                          Detail
-                        </a>
-                      </div>                      
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>BLUD-007</td>
-                    <td>SMK Negeri 1 Tunas Bangsa</td>
-                    <td>10 November 2025</td>
-                    <td><span class="badge">DONE</span></td>
-                    <td><span class="badge">Ditolak</span></td>
-                    <td>
-                      <div class="d-flex justify-content-center gap-2">
-                        <button class="btn btn-detail-custom">
-                          <i class="bi bi-eye"></i>
-                          Detail
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>BLUD-006</td>
-                    <td>RSUD Dr. Soetomo Surabaya</td>
-                    <td>08 November 2025</td>
-                    <td><span class="badge">DONE</span></td>
-                    <td><span class="badge">Diterima</span></td>
-                    <td>
-                      <div class="d-flex justify-content-center gap-2">
-                        <button class="btn btn-detail-custom">
-                          <i class="bi bi-eye"></i>
-                          Detail
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>BLUD-005</td>
-                    <td>RSUD Kabupaten Sidoarjo</td>
-                    <td>05 November 2025</td>
-                    <td><span class="badge">DONE</span></td>
-                    <td><span class="badge">Revisi</span></td>
-                    <td>
-                      <div class="d-flex justify-content-center gap-2">
-                        <button class="btn btn-detail-custom">
-                          <i class="bi bi-eye"></i>
-                          Detail
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>BLUD-004</td>
-                    <td>Dinas Pendidikan Kota Malang</td>
-                    <td>03 November 2025</td>
-                    <td><span class="badge">DONE</span></td>
-                    <td><span class="badge">Diterima</span></td>
-                    <td>
-                      <div class="d-flex justify-content-center gap-2">
-                        <button class="btn btn-detail-custom">
-                          <i class="bi bi-eye"></i>
-                          Detail
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>BLUD-003</td>
-                    <td>Puskesmas Kenjeran</td>
-                    <td>01 November 2025</td>
-                    <td><span class="badge">DONE</span></td>
-                    <td><span class="badge">Diterima</span></td>
-                    <td>
-                      <div class="d-flex justify-content-center gap-2">
-                        <button class="btn btn-detail-custom">
-                          <i class="bi bi-eye"></i>
-                          Detail
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+/* Table Usulan */
+.table-usulan {
+  margin-bottom: 0;
+}
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+.table-usulan thead {
+  background-color: #f8f9fa;
+}
 
-    <!-- Sidebar JS (Reusable) -->
-    <script src="/assets/js/sidebar.js"></script>
-  </body>
-</html>
+.table-usulan thead th {
+  font-size: 13px;
+  font-weight: 600;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 16px 20px;
+  border-bottom: 2px solid #e5e7eb;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table-usulan tbody td {
+  padding: 18px 20px;
+  font-size: 14px;
+  color: #374151;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-usulan tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background-color 0.2s ease;
+}
+
+.table-usulan tbody tr:hover {
+  background-color: #f9fafb;
+}
+
+.table-usulan tbody tr:last-child {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.table-usulan th,
+.table-usulan td {
+  text-align: center !important;
+}
+
+/* Badge Styles (Black/Hitam) */
+.badge {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background: none !important;
+  color: #000 !important;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Button Styles */
+.btn {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+}
+
+.btn i {
+  font-size: 14px;
+}
+
+.btn-edit-custom {
+  background-color: #fbbf24;
+  color: #78350f;
+}
+
+.btn-edit-custom:hover {
+  background-color: #f59e0b;
+  color: #78350f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+}
+
+.btn-hapus-custom {
+  background-color: #ef4444;
+  color: white;
+}
+
+.btn-hapus-custom:hover {
+  background-color: #dc2626;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+}
+
+.btn-detail-custom {
+  background-color: #1e3a8a;
+  color: white;
+}
+
+.btn-detail-custom:hover {
+  background-color: #1e40af;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 58, 138, 0.4);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 991px) {
+  .filter-section {
+    padding: 16px 20px;
+  }
+
+  .table-container {
+    margin-top: 20px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-title h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .filter-section {
+    padding: 16px;
+  }
+
+  .search-filter-input {
+    font-size: 13px;
+    padding: 9px 40px 9px 14px;
+  }
+
+  .status-select {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+
+  .btn-filter-custom,
+  .btn-reset-custom {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+
+  .btn-buat-usulan {
+    padding: 9px 20px;
+    font-size: 13px;
+  }
+
+  .table-responsive {
+    overflow-x: auto;
+  }
+
+  .table-usulan {
+    min-width: 800px;
+  }
+
+  .table-usulan thead th {
+    font-size: 12px;
+    padding: 14px 16px;
+  }
+
+  .table-usulan tbody td {
+    padding: 16px;
+    font-size: 13px;
+  }
+
+  .btn {
+    padding: 5px 12px;
+    font-size: 12px;
+  }
+
+  .badge {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 576px) {
+  .content-title h2 {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .filter-section {
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .search-filter-input {
+    font-size: 12px;
+    padding: 8px 36px 8px 12px;
+  }
+
+  .search-filter-btn {
+    right: 6px;
+    padding: 6px 10px;
+  }
+
+  .search-filter-btn i {
+    font-size: 14px;
+  }
+
+  .status-select {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .btn-filter-custom,
+  .btn-reset-custom {
+    padding: 8px 16px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .btn-buat-usulan {
+    padding: 8px 18px;
+    font-size: 12px;
+  }
+
+  .table-container {
+    margin-top: 16px;
+    border-radius: 6px;
+  }
+
+  .table-usulan {
+    min-width: 750px;
+  }
+
+  .table-usulan thead th {
+    font-size: 11px;
+    padding: 12px 14px;
+  }
+
+  .table-usulan tbody td {
+    padding: 14px;
+    font-size: 12px;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    font-size: 11px;
+    gap: 4px;
+  }
+
+  .btn i {
+    font-size: 12px;
+  }
+
+  .badge {
+    font-size: 10px;
+  }
+
+  .d-flex.gap-2 {
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
