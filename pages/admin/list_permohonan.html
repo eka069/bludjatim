@@ -94,12 +94,12 @@
     <!-- Main Container -->
     <div class="main-container w-100">
       <div class="box-background"></div>
-      <div
-        class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+      <div class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+        
         <!-- Sidebar -->
         <aside class="sidebar-custom" id="sidebar">
           <nav class="sidebar-nav">
-            <!-- Dashboard - Menu Biasa (tanpa submenu) -->
+            <!-- Dashboard -->
             <a href="dashboard.html" class="nav-item-custom">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,8 +107,8 @@
               </svg>
               <span>Dashboard</span>
             </a>
-        
-            <!-- Managemen User dengan Submenu -->
+
+            <!-- Managemen User -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'userSubmenu')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -122,15 +122,12 @@
                   <path d="M4 6l4 4 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              
               <div class="submenu" id="userSubmenu">
-                <a href="user.html" class="submenu-item">
-                  USER
-                </a>
+                <a href="user.html" class="submenu-item">USER</a>
               </div>
             </div>
-        
-            <!-- Master dengan Submenu -->
+
+            <!-- Master -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'masterSubmenu')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -142,7 +139,6 @@
                   <path d="M4 6l4 4 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              
               <div class="submenu" id="masterSubmenu">
                 <a href="dokumen_syarat.html" class="submenu-item">DOKUMEN SYARAT</a>
                 <a href="opd.html" class="submenu-item">OPD</a>
@@ -151,8 +147,8 @@
                 <a href="indikator_evaluasi.html" class="submenu-item">INDIKATOR EVALUASI</a>
               </div>
             </div>
-        
-            <!-- Permohonan dengan Submenu -->
+
+            <!-- Permohonan -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'permohonanSubmenu')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -166,15 +162,12 @@
                   <path d="M4 6l4 4 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              
               <div class="submenu" id="permohonanSubmenu">
-                <a href="list_permohonan.html" class="submenu-item">
-                  PERMOHONAN PROSES
-                </a>
+                <a href="list_permohonan.html" class="submenu-item">PERMOHONAN PROSES</a>
               </div>
             </div>
-        
-            <!-- Monitoring dengan Submenu -->
+
+            <!-- Monitoring -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'monitoringSubmenu')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -185,7 +178,6 @@
                   <path d="M4 6l4 4 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>
-              
               <div class="submenu" id="monitoringSubmenu">
                 <a href="#" class="submenu-item">STATUS PERMOHONAN</a>
                 <a href="#" class="submenu-item">LAPORAN</a>
@@ -202,7 +194,7 @@
 
           <!-- Header Actions -->
           <div class="header-actions">
-            <a href="pengajuan_data.html" class="btn-new text-decoration-none">
+            <a href="pengajuan_data.html" class="btn-new">
               <i class="bi bi-plus-lg"></i>
               New
             </a>                      
@@ -221,30 +213,30 @@
                       <input type="checkbox" />
                     </th>
                     <th scope="col">Kode</th>
-                    <th scope="col">Calon blud</th>
-                    <th scope="col">Opd</th>
+                    <th scope="col">Calon BLUD</th>
+                    <th scope="col">OPD</th>
                     <th scope="col">Bidang</th>
                     <th scope="col">Status</th>
-                    <th scope="col" class="text-center">Actions</th>
+                    <th scope="col">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td><input type="checkbox" /></td>
                     <td>BLUD-90QCONY</td>
-                    <td>SMKN1 Surabaya</td>
+                    <td>SMKN 1 Surabaya</td>
                     <td>Pendidikan</td>
                     <td>Pendidikan Menengah Kejuruan</td>
                     <td>
                       <span class="badge-status badge-proses">PROSES PENILAIAN</span>
                     </td>
-                    <td class="text-center">
+                    <td>
                       <div class="d-flex flex-column gap-1">
-                        <a href="/pages/opd/detail_data.html" class="btn btn-outline-primary btn-sm text-decoration-none">
+                        <a href="detail_data.html" class="btn btn-outline-primary btn-sm">
                           <i class="bi bi-chat-square-text"></i> Detail
                         </a> 
                         <button class="btn btn-danger btn-sm">
-                          Delete
+                          <i class="bi bi-trash"></i> Delete
                         </button>
                       </div>
                     </td>
@@ -253,20 +245,19 @@
                   <tr>
                     <td><input type="checkbox" /></td>
                     <td>BLUD-920676QP</td>
-                    <td>SMKN2 Surabaya</td>
+                    <td>SMKN 2 Surabaya</td>
                     <td>Pendidikan</td>
                     <td>Pendidikan dan Pelatihan</td>
                     <td>
                       <span class="badge-status badge-proses">PROSES PENILAIAN</span>
                     </td>
-                    <td class="text-center">
+                    <td>
                       <div class="d-flex flex-column gap-1">
-                        <a href="./detail_data.html" class="btn btn-outline-primary btn-sm ... text-decoration-none">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
+                        <a href="detail_data.html" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-chat-square-text"></i> Detail
                         </a>
                         <button class="btn btn-danger btn-sm">
-                          Delete
+                          <i class="bi bi-trash"></i> Delete
                         </button>
                       </div>
                     </td>
@@ -275,21 +266,19 @@
                   <tr>
                     <td><input type="checkbox" /></td>
                     <td>BLUD-9AAPQPOY</td>
-                    <td>SMKN 5 SURABAYA</td>
+                    <td>SMKN 5 Surabaya</td>
                     <td>Pendidikan</td>
                     <td>Pendidikan Menengah Kejuruan</td>
                     <td>
                       <span class="badge-status badge-proses">PROSES PENILAIAN</span>
                     </td>
-                    <td class="text-center">
+                    <td>
                       <div class="d-flex flex-column gap-1">
-                        <button
-                          class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 justify-content-center">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </button>
+                        <a href="detail_data.html" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-chat-square-text"></i> Detail
+                        </a>
                         <button class="btn btn-danger btn-sm">
-                          Delete
+                          <i class="bi bi-trash"></i> Delete
                         </button>
                       </div>
                     </td>
@@ -304,20 +293,17 @@
                     <td>
                       <span class="badge-status badge-draft">DRAFT</span>
                     </td>
-                    <td class="text-center">
+                    <td>
                       <div class="d-flex flex-column gap-1">
-                        <button
-                          class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 justify-content-center">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </button>
+                        <a href="detail_data.html" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-chat-square-text"></i> Detail
+                        </a>
                         <button class="btn btn-danger btn-sm">
-                          Delete
+                          <i class="bi bi-trash"></i> Delete
                         </button>
                       </div>
                     </td>
                   </tr>
-          
                 </tbody>
               </table>
             </div>
@@ -330,7 +316,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Sidebar JS (Reusable) -->
+    <!-- Sidebar JS -->
     <script src="/assets/js/sidebar.js"></script>
   </body>
 </html>

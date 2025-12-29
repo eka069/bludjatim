@@ -1,0 +1,606 @@
+/* Master Table Styles - Universal for Dokumen Syarat, OPD, and similar pages */
+
+/* Content Title */
+.content-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Header Actions */
+.header-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-new {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-new:hover {
+  background: #1e3a8a;
+}
+
+.btn-filter {
+  background: white;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-filter:hover {
+  background: #1e40af;
+  color: white;
+}
+
+/* Table Container */
+.table-container {
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
+/* Universal Table Styles - works for any table with .table-master class */
+.table-master {
+  margin: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-master thead {
+  background: #f8fafc;
+}
+
+.table-master thead th {
+  padding: 14px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table-master thead th:first-child {
+  text-align: center;
+}
+
+.table-master thead th i {
+  font-size: 9px;
+  margin-left: 3px;
+  color: #2563eb;
+}
+
+.table-master tbody td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #1e293b;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table-master tbody td:first-child {
+  text-align: center;
+}
+
+.table-master tbody tr {
+  background: white;
+}
+
+.table-master tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+.table-master tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Backward compatibility - keep old class names working */
+.table-dokumen,
+.table-opd {
+  margin: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-dokumen thead,
+.table-opd thead {
+  background: #f8fafc;
+}
+
+.table-dokumen thead th,
+.table-opd thead th {
+  padding: 14px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #2563eb;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.table-dokumen thead th:first-child,
+.table-opd thead th:first-child {
+  text-align: center;
+}
+
+.table-dokumen thead th i,
+.table-opd thead th i {
+  font-size: 9px;
+  margin-left: 3px;
+  color: #2563eb;
+}
+
+.table-dokumen tbody td,
+.table-opd tbody td {
+  padding: 14px 16px;
+  font-size: 13px;
+  color: #1e293b;
+  vertical-align: middle;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.table-dokumen tbody td:first-child,
+.table-opd tbody td:first-child {
+  text-align: center;
+}
+
+.table-dokumen tbody tr,
+.table-opd tbody tr {
+  background: white;
+}
+
+.table-dokumen tbody tr:nth-child(even),
+.table-opd tbody tr:nth-child(even) {
+  background: #fafbfc;
+}
+
+.table-dokumen tbody tr:hover,
+.table-opd tbody tr:hover {
+  background: #f1f5f9;
+}
+
+/* Checkbox */
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 2px solid #cbd5e1;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-check-input:checked {
+  background-color: #1e40af;
+  border-color: #1e40af;
+}
+
+/* Action Buttons */
+.btn-edit {
+  background: #fbbf24;
+  color: #1e293b;
+  border: 1px solid #f59e0b;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+  background: #f59e0b;
+  border-color: #d97706;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  margin-right: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+}
+
+.btn-detail {
+  background: #1e40af;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+}
+
+.btn-detail:hover {
+  background: #1e3a8a;
+}
+
+/* Icon Status */
+.text-success {
+  color: #10b981;
+  font-size: 18px;
+}
+
+.text-danger {
+  color: #ef4444;
+  font-size: 16px;
+}
+
+/* Pagination Container */
+.pagination-container {
+  padding: 16px 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 6px;
+}
+
+.page-btn {
+  background: white;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+.page-btn.active {
+  background: #1e40af;
+  color: white;
+  border-color: #1e40af;
+}
+
+.page-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pagination-info {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Table Footer - for pages with "chosen datasets" */
+.table-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+}
+
+.chosen-datasets {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chosen-datasets span {
+  font-size: 13px;
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.btn-ok {
+  background: white;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+  padding: 6px 20px;
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-ok:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.page-navigation span {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Entries per page */
+.entries-per-page {
+  padding: 0 20px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #64748b;
+}
+
+.entries-per-page select {
+  width: 70px;
+  padding: 4px 8px;
+  border: 1px solid #e2e8f0;
+  border-radius: 5px;
+  font-size: 13px;
+}
+
+/* ========================================
+   HIERARCHICAL / TREE TABLE STYLES
+   For Indikator Evaluasi and similar pages
+   ======================================== */
+
+/* Tree table specific styles */
+.table-tree {
+  margin: 0;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-tree thead {
+  background: #f8fafc;
+}
+
+.table-tree thead th {
+  padding: 12px 16px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #1e293b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #e2e8f0;
+  white-space: nowrap;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.table-tree thead th:nth-child(2) {
+  text-align: left;
+}
+
+.table-tree tbody td {
+  padding: 10px 16px;
+  font-size: 13px;
+  color: #1e293b;
+  vertical-align: middle;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Level 1 - Main Categories (Green background) */
+.table-tree tbody tr.level-1 {
+  background: #d1f0e1;
+  font-weight: 600;
+}
+
+.table-tree tbody tr.level-1 td {
+  padding: 12px 16px;
+}
+
+.table-tree tbody tr.level-1:hover {
+  background: #b8e6d1;
+}
+
+/* Level 2 - Sub Categories (Yellow background) */
+.table-tree tbody tr.level-2 {
+  background: #fff9db;
+  font-weight: 600;
+}
+
+.table-tree tbody tr.level-2 td {
+  padding: 11px 16px;
+}
+
+.table-tree tbody tr.level-2:hover {
+  background: #fff3c1;
+}
+
+/* Level 3 - Items (Beige/Light yellow) */
+.table-tree tbody tr.level-3 {
+  background: #fef3e2;
+}
+
+.table-tree tbody tr.level-3:hover {
+  background: #fde9c8;
+}
+
+/* Level 4 - Sub Items (Very light yellow/cream) */
+.table-tree tbody tr.level-4 {
+  background: #fffcf5;
+}
+
+.table-tree tbody tr.level-4:hover {
+  background: #fff9e6;
+}
+
+/* Level 5 - Detail Items (White) */
+.table-tree tbody tr.level-5 {
+  background: #ffffff;
+}
+
+.table-tree tbody tr.level-5:hover {
+  background: #fafafa;
+}
+
+/* Tree structure indicators */
+.tree-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tree-indicator i {
+  font-size: 12px;
+  color: #2563eb;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.tree-indicator i.collapsed {
+  transform: rotate(-90deg);
+}
+
+/* Indent for hierarchy levels */
+.level-1 .tree-indicator {
+  padding-left: 0;
+}
+
+.level-2 .tree-indicator {
+  padding-left: 20px;
+}
+
+.level-3 .tree-indicator {
+  padding-left: 40px;
+}
+
+.level-4 .tree-indicator {
+  padding-left: 60px;
+}
+
+.level-5 .tree-indicator {
+  padding-left: 80px;
+}
+
+/* Action buttons in tree table - smaller and more compact */
+.table-tree .btn-action {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  transition: all 0.2s ease;
+  margin: 0 2px;
+  min-width: 28px;
+  height: 24px;
+}
+
+.table-tree .btn-action:hover {
+  background: #2563eb;
+}
+
+.table-tree .btn-action i {
+  font-size: 12px;
+}
+
+.table-tree .btn-action.btn-add {
+  background: #10b981;
+}
+
+.table-tree .btn-action.btn-add:hover {
+  background: #059669;
+}
+
+.table-tree .btn-action.btn-edit {
+  background: #fbbf24;
+  color: #1e293b;
+}
+
+.table-tree .btn-action.btn-edit:hover {
+  background: #f59e0b;
+}
+
+.table-tree .btn-action.btn-delete {
+  background: #ef4444;
+}
+
+.table-tree .btn-action.btn-delete:hover {
+  background: #dc2626;
+}
+
+.table-tree .btn-action.btn-detail {
+  background: #6366f1;
+}
+
+.table-tree .btn-action.btn-detail:hover {
+  background: #4f46e5;
+}
+
+/* Number column styling */
+.table-tree tbody td:first-child {
+  text-align: center;
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 12px;
+  min-width: 60px;
+}
+
+/* Rumus and Jenis Input columns */
+.table-tree tbody td:nth-child(3),
+.table-tree tbody td:nth-child(4) {
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Action column */
+.table-tree tbody td:last-child {
+  text-align: center;
+  white-space: nowrap;
+}

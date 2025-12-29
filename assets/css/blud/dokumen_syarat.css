@@ -1,0 +1,259 @@
+/* Content Title */
+.content-title h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  /* Header Actions */
+  .header-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .btn-new {
+    background: #1e40af;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-new:hover {
+    background: #1e3a8a;
+  }
+  
+  .btn-filter {
+    background: white;
+    color: #1e40af;
+    border: 2px solid #1e40af;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-filter:hover {
+    background: #1e40af;
+    color: white;
+  }
+  
+  /* Table Container */
+  .table-container {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .table-dokumen {
+    margin: 0;
+    width: 100%;
+  }
+  
+  .table-dokumen thead {
+    background: #f8fafc;
+  }
+  
+  .table-dokumen thead th {
+    padding: 14px 16px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #1e40af;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e2e8f0;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  
+  .table-dokumen thead th i {
+    font-size: 9px;
+    margin-left: 3px;
+  }
+  
+  .table-dokumen tbody td {
+    padding: 14px 16px;
+    font-size: 13px;
+    color: #1e293b;
+    vertical-align: middle;
+    border-bottom: 1px solid #f1f5f9;
+  }
+  
+  .table-dokumen tbody tr:nth-child(even) {
+    background: #fafbfc;
+  }
+  
+  .table-dokumen tbody tr:hover {
+    background: #f1f5f9;
+  }
+  
+  /* Checkbox */
+  .form-check-input {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #cbd5e1;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .form-check-input:checked {
+    background-color: #1e40af;
+    border-color: #1e40af;
+  }
+  
+  /* Action Buttons */
+  .btn-edit {
+    background: #fbbf24;
+    color: #1e293b;
+    border: 1px solid #f59e0b;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-edit:hover {
+    background: #f59e0b;
+    border-color: #d97706;
+  }
+  
+  .btn-delete {
+    background: #ef4444;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    margin-right: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-delete:hover {
+    background: #dc2626;
+  }
+  
+  .btn-detail {
+    background: #1e40af;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s ease;
+  }
+  
+  .btn-detail:hover {
+    background: #1e3a8a;
+  }
+  
+  /* Icon Status */
+  .text-success {
+    color: #10b981;
+    font-size: 18px;
+  }
+  
+  .text-danger {
+    color: #ef4444;
+    font-size: 16px;
+  }
+  
+  /* Pagination */
+  .pagination-container {
+    padding: 16px 20px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .pagination-controls {
+    display: flex;
+    gap: 6px;
+  }
+  
+  .page-btn {
+    background: white;
+    border: 1px solid #e2e8f0;
+    color: #64748b;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  
+  .page-btn:hover:not(:disabled) {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+  }
+  
+  .page-btn.active {
+    background: #1e40af;
+    color: white;
+    border-color: #1e40af;
+  }
+  
+  .page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  
+  .pagination-info {
+    font-size: 12px;
+    color: #64748b;
+  }
+  
+  /* Entries per page */
+  .entries-per-page {
+    padding: 0 20px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #64748b;
+  }
+  
+  .entries-per-page select {
+    width: 70px;
+    padding: 4px 8px;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    font-size: 13px;
+  }

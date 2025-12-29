@@ -329,12 +329,12 @@
               </div>
 
               <div class="row g-2">
-                <div class="col-6">
+                <div class="col-12">
                   <button type="submit" class="btn-custom btn-primary-custom">Login</button>
                 </div>
-                <div class="col-6">
+                <!-- <div class="col-6">
                   <button type="button" class="btn-custom btn-secondary-custom" onclick="loginAsAssessor()">Login as Tim Penilai</button>
-                </div>
+                </div> -->
               </div>
             </form>
           </div>
@@ -380,8 +380,26 @@
 
     document.getElementById('loginForm').addEventListener('submit', function (e) {
       e.preventDefault();
-      alert('Login berhasil!');
-      window.location.href = 'dashboard.html';  
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // Validasi username dan password, lalu redirect ke dashboard yang sesuai
+      if (username === 'pendidikan' && password === 'admin') {
+        alert('Login berhasil! Selamat datang OPD Pendidikan');
+        window.location.href = 'pages/opd/dashboard.html';
+      } 
+      else if (username === 'admin' && password === 'admin') {
+        alert('Login berhasil! Selamat datang Administrator');
+        window.location.href = 'pages/admin/dashboard.html';
+      } 
+      else if (username === 'penilai' && password === 'admin') {
+        alert('Login berhasil! Selamat datang Tim Penilai');
+        window.location.href = 'pages/penilai/dashboard.html';
+      } 
+      else {
+        alert('Username atau password salah! Silakan coba lagi.');
+      }
     });
   </script>
 </body>

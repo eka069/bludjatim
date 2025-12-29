@@ -1,533 +1,373 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* =====================================================
+   FORM.CSS - Form Pendirian Page Styles
+   Compatible dengan template.css dan sidebar.css
+   ===================================================== */
+
+/* Override content-inner untuk background putih */
+.content-inner {
+  background-color: white !important;
+  padding: 1.75rem 1.875rem !important; /* 28px 30px */
 }
 
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #0b2d72;
-  color: #333;
-  min-height: 100vh;
+/* ===== TABS ===== */
+.tabs-container {
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 1.5625rem; /* 25px */
+}
+
+.tabs {
+  display: flex;
+  gap: 1rem; /* 16px */
+}
+
+.tab {
+  padding: 0.75rem 1.25rem; /* 12px 20px */
+  color: #4b5563;
+  font-size: 0.875rem; /* 14px */
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem; /* 6px */
+  text-decoration: none;
+  border-radius: 0.375rem 0.375rem 0 0; /* 6px 6px 0 0 */
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.tab:hover {
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.tab.active {
+  color: #1e40af;
+  border-bottom-color: #1e40af;
+  background-color: #eff6ff;
+}
+
+.tab img {
+  width: 1.25rem; /* 20px */
+  height: 1.25rem; /* 20px */
+}
+
+/* ===== FORM CONTAINER ===== */
+.form-container {
+  margin-top: 1.25rem; /* 20px */
+}
+
+.section-title {
+  font-size: 0.875rem; /* 14px */
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem; /* 8px */
+  display: block;
+}
+
+/* ===== TEXT EDITOR ===== */
+.editor {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem; /* 8px */
+  margin-bottom: 1rem; /* 16px */
+  background-color: #f9fafb;
   overflow: hidden;
 }
 
-/* NAVBAR */
-.navbar {
-  background-color: #0b2d72;
-  padding: 12px 40px;
+.editor .toolbar {
+  padding: 0.5rem; /* 8px */
+  background: #f3f4f6;
+  border-bottom: 1px solid #d1d5db;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  flex-wrap: wrap;
+  gap: 0.375rem; /* 6px */
 }
 
-.navbar-left {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.navbar-logo {
-  height: 40px;
-  width: auto;
-}
-
-.breadcrumb {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 14px;
-  margin-left: 67px;
-}
-
-.breadcrumb .separator {
-  color: rgba(255, 255, 255, 0.5);
-}
-
-.breadcrumb .active {
-  color: white;
-  font-weight: 600;
-}
-
-.navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-  }
-
-.navbar-actions {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.search-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-box input {
-  width: 280px;
-  padding: 10px 45px 10px 16px;
-  border-radius: 50px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
-  color: white;
-  font-size: 14px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-.search-box input::placeholder {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.search-box input:focus {
-  background-color: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.search-btn {
-  position: absolute;
-  right: 12px;
-  background: none;
-  border: none;
-  color: rgba(255, 255, 255, 0.8);
+.editor .toolbar button {
+  background: white;
+  border: 1px solid #d1d5db;
+  padding: 0.375rem 0.625rem; /* 6px 10px */
+  border-radius: 0.25rem; /* 4px */
   cursor: pointer;
-  padding: 4px;
-  display: flex;
-  align-items: center;
-}
-
-.notification-btn {
-  position: relative;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-}
-
-.notification-badge {
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 8px;
-  height: 8px;
-  background-color: #e74c3c;
-  border-radius: 50%;
-  border: 2px solid #0b2d72;
-}
-
-.user-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.2);
-  cursor: pointer;
-}
-
-/* ===== MAIN CONTAINER ===== */
-.main-container {
-  display: flex;
-  height: calc(100vh - 66px);
-  background-color: #1C3271;
-  position: relative;
-  padding: 80px;
-  padding-left: 0;
-}
-
-/* Layer 2: Background #2B4286 di belakang sidebar dan content */
-.main-container::before {
-  content: '';
-  position: absolute;
-  left: 90px;
-  top: 30px;
-  right: 90px;
-  height: 150px;
-  background-color: #2B4286;
-  border-radius: 20px;
-  z-index: 1;
-}
-
-/* SIDEBAR */
-.sidebar {
-  width: 280px;
-  background-color: #071A50;
-  padding: 80px 0;
-  position: absolute;
-  left: 30px;
-  top: 50px;
-  bottom: -90px;
-  border-radius: 25px 0px 0 0;
-  z-index: 3;
-}
-
-.sidebar-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  padding: 0 15px;
-}
-
-.nav-item {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 20px;
-  color: rgba(255, 255, 255, 0.7);
-  text-decoration: none;
-  border-radius: 8px;
-  font-size: 15px;
+  font-size: 0.8125rem; /* 13px */
   font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-right: 20px;
-}
-
-.nav-item img {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  transition: filter 0.3s ease; 
-}
-
-.nav-item svg {
-  width: 22px;
-  height: 22px;
-  flex-shrink: 0;
-  transition: stroke 0.3s ease; 
-}
-
-.nav-item .chevron {
-  margin-left: auto;
-  width: 18px;
-  height: 18px;
-  transform: rotate(90deg);
-}
-
-/* Hover dan Active */
-.nav-item:hover {
-  background-color: rgba(255, 255, 255, 0.05);
-  color: white;
-}
-
-.nav-item.active {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
-}
-
-/* Efek ubah warna ikon PNG + chevron SVG saat hover/aktif */
-.nav-item:hover img,
-.nav-item.active img {
-  filter: brightness(0) invert(1);
-}
-
-.nav-item:hover .chevron path,
-.nav-item.active .chevron path {
-  stroke: white;
-}
-
-/* ===== MAIN CONTENT (PROFIL)===== */
-.content {
-  flex: 1;
-  position: relative;
-  margin-left: 320px;
-  z-index: 4;
-}
-
-/* Layer 3: Background abu-abu dengan tulisan "Profil" */
-.content::before {
-  content: '';
-  position: absolute;
-  left: -30px;
-  top: -30px;
-  right: -30px;
-  bottom: -90px;
-  background-color: #F1F5F8;
-  border-radius: 25px 25px 0 0;
-  z-index: 2;
-}
-
-.profile-card {
-  background-color: #FFFFFF;
-  border-radius: 12px;
-  border: 1px solid #D1DCE5;
-  padding: 35px;
-  margin: 50px auto 0 auto; 
-  position: relative;
-  z-index: 3;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  width: 100%;
-  height: calc(100vh - 180px);
-  display: flex;
-  flex-direction: column;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-}
-
-.profile-title {
-  position: absolute;
-  top: 0px; 
-  left: 5px;
-  font-size: 22px;
-  font-weight: 600;
-  color: #373739; 
-  background: none; 
-  padding: 0;
-  border-radius: 0;
-  z-index: 5;
-}
-
-.profile-card::-webkit-scrollbar {
-  width: 6px;
-}
-
-.profile-card::-webkit-scrollbar-track {
-  background: #f8f9fa;
-  border-radius: 10px;
-}
-
-.profile-card::-webkit-scrollbar-thumb {
-  background: #b8c3d6;
-  border-radius: 10px;
-}
-
-.profile-card::-webkit-scrollbar-thumb:hover {
-  background: #98a8c3;
-}
-
-.profile-card-title {
-  font-size: 20px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-}
-
-.profile-header {
-  display: flex;
-  align-items: flex-start;
-  gap: 25px;
-  margin-bottom: 35px;
-}
-
-.profile-logo {
-  width: 110px;
-  height: 110px;
-  object-fit: contain;
-}
-
-.profile-info {
-  flex: 1;
-}
-
-.institution-name {
-  font-size: 22px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 8px;
-}
-
-.role {
-  font-size: 15px;
-  color: #666;
-  margin-bottom: 18px;
-}
-
-.location-info {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.info-item {
+  color: #374151;
+  transition: all 0.2s ease;
+  min-width: 2rem; /* 32px */
   display: flex;
   align-items: center;
-  gap: 10px;
-  color: #555;
-  font-size: 14px;
+  justify-content: center;
 }
 
-.info-item svg {
-  flex-shrink: 0;
+.editor .toolbar button:hover {
+  background-color: #e0e7ff;
+  border-color: #1e40af;
 }
 
-/* TAB */
-.tab {
-  border-bottom: 2px solid #e6ecf5;
-  margin-bottom: 1.2rem;
-}
-
-.tab button {
-  background: none;
+.editor textarea {
+  width: 100%;
+  min-height: 9.375rem; /* 150px */
   border: none;
+  resize: vertical;
+  padding: 0.75rem; /* 12px */
+  background-color: white;
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+
+.editor textarea:focus {
+  outline: none;
+}
+
+/* ===== REQUIREMENTS SECTION ===== */
+.requirements-title {
+  font-size: 1rem; /* 16px */
   font-weight: 600;
-  padding: 0.6rem 1.2rem;
-  border-bottom: 3px solid transparent;
-  cursor: pointer;
-  color: #333;
-  transition: 0.2s ease;
-  font-size: 14px;
-}
-
-.tab button.active {
-  border-color: #2c4aa8;
-  color: #2c4aa8;
-}
-
-/* FORM CONTAINER */
-.form-container {
-  margin-top: 15px;
+  color: #1f2937;
+  margin-top: 1.875rem; /* 30px */
+  margin-bottom: 1.25rem; /* 20px */
 }
 
 .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 1.25rem; /* 20px */
 }
 
 .form-group label {
   display: block;
   font-weight: 500;
-  color: #333;
-  margin-bottom: 8px;
-  font-size: 14px;
+  color: #374151;
+  margin-bottom: 0.5rem; /* 8px */
+  font-size: 0.875rem; /* 14px */
 }
 
-/* Latar Belakang Box */
-.latar-belakang-box {
-  background-color: white;
-  border: 1px solid #d1dce5;
-  border-radius: 8px;
-  padding: 16px;
-  line-height: 1.6;
-  color: #555;
-  font-size: 13px;
-  text-align: justify;
+.form-group label .req {
+  color: #dc2626;
+  margin-left: 0.125rem; /* 2px */
 }
 
-.latar-belakang-box p {
-  margin: 0;
-}
-
-.form-container h4 {
-  margin-top: 25px;
-  margin-bottom: 15px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #222;
-}
-
-/* Isi form rapi */
-.profile-card .form-container .form-group {
-  margin-bottom: 16px;
-}
-.profile-card .form-container label {
-  display: block;
-  font-weight: 500;
-  color: #333;
-  margin-bottom: 6px;
-}
-.profile-card .form-container input[type="file"] {
+.form-group input[type="file"] {
   width: 100%;
-  padding: 6px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+  padding: 0.5rem 0.75rem; /* 8px 12px */
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem; /* 6px */
   background-color: #fff;
-}
-.profile-card .form-container h4 {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #222;
-}
-
-/* Toolbar editor */
-.editor {
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-  background-color: #f4f7fb;
-}
-.editor .toolbar {
-  padding: 0.3rem;
-  background: #e8edf7;
-  border-bottom: 1px solid #ccc;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.editor textarea {
-  width: 100%;
-  height: 100px;
-  border: none;
-  resize: none;
-  padding: 0.5rem;
-  background-color: white;
-}
-
-/* Tab Navigasi */
-.tab {
-  border-bottom: 2px solid #e6ecf5;
-  margin-bottom: 1rem;
-}
-.tab button {
-  background: none;
-  border: none;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-bottom: 3px solid transparent;
+  font-size: 0.875rem; /* 14px */
   cursor: pointer;
-  color: #333;
-  transition: 0.2s ease;
-}
-.tab button.active {
-  border-color: #2c4aa8;
-  color: #2c4aa8;
+  transition: border-color 0.2s ease;
 }
 
-/* Tombol Aksi (Perbaikan) */
-.profile-card .form-container .actions {
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  gap: 16px;
-  margin-top: 25px;
-  margin-bottom: 10px;
-  width: 100%;
+.form-group input[type="file"]:hover {
+  border-color: #9ca3af;
 }
 
-.profile-card .form-container .actions .btn-primary {
-  background-color: #1c3271;
+.form-group input[type="file"]::-webkit-file-upload-button {
+  padding: 0.375rem 1rem; /* 6px 16px */
+  background-color: #1e40af;
   color: white;
   border: none;
-  padding: 10px 36px;
-  border-radius: 8px;
+  border-radius: 0.25rem; /* 4px */
+  cursor: pointer;
+  font-size: 0.8125rem; /* 13px */
+  margin-right: 0.625rem; /* 10px */
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.form-group input[type="file"]::-webkit-file-upload-button:hover {
+  background-color: #1e3a8a;
+}
+
+/* Firefox file upload button */
+.form-group input[type="file"]::file-selector-button {
+  padding: 0.375rem 1rem; /* 6px 16px */
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  border-radius: 0.25rem; /* 4px */
+  cursor: pointer;
+  font-size: 0.8125rem; /* 13px */
+  margin-right: 0.625rem; /* 10px */
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.form-group input[type="file"]::file-selector-button:hover {
+  background-color: #1e3a8a;
+}
+
+/* ===== ACTION BUTTONS ===== */
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; /* 16px */
+  margin-top: 2.1875rem; /* 35px */
+  margin-bottom: 1.25rem; /* 20px */
+  padding-top: 1.875rem; /* 30px */
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-primary-custom {
+  background-color: #1e40af;
+  color: white;
+  border: none;
+  padding: 0.75rem 2.5rem; /* 12px 40px */
+  border-radius: 0.5rem; /* 8px */
   font-weight: 600;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 0.9375rem; /* 15px */
   transition: all 0.3s ease;
 }
 
-.profile-card .form-container .actions .btn-primary:hover {
-  background-color: #16295a;
+.btn-primary-custom:hover {
+  background-color: #1e3a8a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.profile-card .form-container .actions .btn-secondary {
+.btn-secondary-custom {
   background-color: white;
-  color: #1c3271;
-  border: 1px solid #1c3271;
-  padding: 10px 36px;
-  border-radius: 8px;
+  color: #1e40af;
+  border: 2px solid #1e40af;
+  padding: 0.75rem 2.5rem; /* 12px 40px */
+  border-radius: 0.5rem; /* 8px */
   font-weight: 600;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 0.9375rem; /* 15px */
   transition: all 0.3s ease;
 }
 
-.profile-card .form-container .actions .btn-secondary:hover {
-  background-color: #eaf0ff;
+.btn-secondary-custom:hover {
+  background-color: #eff6ff;
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Medium devices (≥768px) - Tablet Portrait */
+@media (max-width: 768px) {
+  .content-inner {
+    padding: 1.25rem 1rem !important; /* 20px 16px */
+  }
+
+  .profile-header {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1rem; /* 16px */
+    padding-bottom: 1.25rem; /* 20px */
+  }
+
+  .profile-logo {
+    width: 4.375rem; /* 70px */
+    height: 4.375rem; /* 70px */
+  }
+
+  .institution-name {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  .role {
+    font-size: 0.875rem; /* 14px */
+  }
+
+  .info-item {
+    font-size: 0.8125rem; /* 13px */
+  }
+
+  .tab {
+    flex: 1;
+    min-width: 4.375rem; /* 70px */
+    justify-content: center;
+    padding: 0.625rem 0.75rem; /* 10px 12px */
+    font-size: 0.8125rem; /* 13px */
+  }
+
+  .tab img {
+    width: 1rem; /* 16px */
+    height: 1rem; /* 16px */
+  }
+
+  .editor .toolbar {
+    gap: 0.25rem; /* 4px */
+  }
+
+  .editor .toolbar button {
+    min-width: 1.75rem; /* 28px */
+    padding: 0.3125rem 0.5rem; /* 5px 8px */
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .editor textarea {
+    min-height: 7.5rem; /* 120px */
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.75rem; /* 12px */
+  }
+
+  .btn-primary-custom,
+  .btn-secondary-custom {
+    width: 100%;
+  }
+}
+
+/* Small devices (≥576px) - Mobile Landscape */
+@media (max-width: 576px) {
+  .content-inner {
+    padding: 1rem 0.75rem !important; /* 16px 12px */
+  }
+
+  .profile-logo {
+    width: 3.75rem; /* 60px */
+    height: 3.75rem; /* 60px */
+  }
+
+  .institution-name {
+    font-size: 1rem; /* 16px */
+  }
+
+  .role {
+    font-size: 0.8125rem; /* 13px */
+    margin-bottom: 0.75rem; /* 12px */
+  }
+
+  .tabs-container {
+    margin-bottom: 1.25rem; /* 20px */
+  }
+
+  .requirements-title {
+    font-size: 0.9375rem; /* 15px */
+    margin-top: 1.5rem; /* 24px */
+  }
+}
+
+/* Extra small devices (<400px) - Mobile Portrait */
+@media (max-width: 400px) {
+  .profile-header {
+    gap: 0.75rem; /* 12px */
+  }
+
+  .profile-logo {
+    width: 3.125rem; /* 50px */
+    height: 3.125rem; /* 50px */
+  }
+
+  .institution-name {
+    font-size: 0.9375rem; /* 15px */
+  }
+
+  .role {
+    font-size: 0.75rem; /* 12px */
+  }
+
+  .info-item {
+    font-size: 0.75rem; /* 12px */
+  }
 }

@@ -113,13 +113,15 @@ body {
   height: 40px;
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 600;
   cursor: pointer;
+  user-select: none;
 }
+
 
 /* ===== MAIN CONTAINER ===== */
 .main-container {

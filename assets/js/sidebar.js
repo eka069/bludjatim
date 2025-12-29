@@ -180,7 +180,6 @@ function removeAllActiveStates() {
   allSubmenuItems.forEach(item => item.classList.remove('active'));
 }
 
-// Function: Set active menu berdasarkan URL
 function setActiveMenuFromURL() {
   const currentPath = window.location.pathname;
   
@@ -237,3 +236,101 @@ function setActiveMenuFromURL() {
     if (chevron) chevron.style.transform = 'rotate(180deg)';
   }
 }
+
+// Sidebar Submenu Toggle Function
+
+function toggleSubmenu(event, submenuId) {
+  event.preventDefault();
+  event.stopPropagation(); // Prevent event bubbling
+  
+  const navItem = event.currentTarget;
+  const submenu = document.getElementById(submenuId);
+  
+  // Check if this submenu is already open
+  const isCurrentlyOpen = submenu.classList.contains('show');
+  
+  // Close all other submenus
+  document.querySelectorAll('.submenu').forEach(function(otherSubmenu) {
+    otherSubmenu.classList.remove('show');
+  });
+  
+  // Remove expanded class from all nav items
+  document.querySelectorAll('.nav-item-custom').forEach(function(item) {
+    item.classList.remove('expanded');
+  });
+  
+  // If the clicked submenu was not open, open it
+  if (!isCurrentlyOpen) {
+    submenu.classList.add('show');
+    navItem.classList.add('expanded');
+  }
+}
+
+// Auto expand submenu if it has active item
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all active submenu items
+  const activeSubmenus = document.querySelectorAll('.submenu-item.active');
+  
+  activeSubmenus.forEach(function(activeItem) {
+    // Get parent submenu
+    const submenu = activeItem.closest('.submenu');
+    if (submenu) {
+      // Show submenu
+      submenu.classList.add('show');
+      
+      // Find parent nav item and mark as expanded and has active submenu
+      const parentDiv = submenu.parentElement;
+      const navItem = parentDiv.querySelector('.nav-item-custom');
+      if (navItem) {
+        navItem.classList.add('expanded', 'has-active-submenu');
+      }
+    }
+  });
+});
+function toggleSubmenu(event, submenuId) {
+  event.preventDefault();
+  
+  const navItem = event.currentTarget;
+  const submenu = document.getElementById(submenuId);
+  
+  // Check if this submenu is already open
+  const isCurrentlyOpen = submenu.classList.contains('show');
+  
+  // Close all other submenus
+  document.querySelectorAll('.submenu').forEach(function(otherSubmenu) {
+    otherSubmenu.classList.remove('show');
+  });
+  
+  // Remove expanded class from all nav items
+  document.querySelectorAll('.nav-item-custom').forEach(function(item) {
+    item.classList.remove('expanded');
+  });
+  
+  // If the clicked submenu was not open, open it
+  if (!isCurrentlyOpen) {
+    submenu.classList.add('show');
+    navItem.classList.add('expanded');
+  }
+}
+
+// Auto expand submenu if it has active item
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all active submenu items
+  const activeSubmenus = document.querySelectorAll('.submenu-item.active');
+  
+  activeSubmenus.forEach(function(activeItem) {
+    // Get parent submenu
+    const submenu = activeItem.closest('.submenu');
+    if (submenu) {
+      // Show submenu
+      submenu.classList.add('show');
+      
+      // Find parent nav item and mark as expanded and has active submenu
+      const parentDiv = submenu.parentElement;
+      const navItem = parentDiv.querySelector('.nav-item-custom');
+      if (navItem) {
+        navItem.classList.add('expanded', 'has-active-submenu');
+      }
+    }
+  });
+});

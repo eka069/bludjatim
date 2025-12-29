@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Permohonan Proses | BLUD Jawa Timur</title>
+    <title>Dokumen Syarat | BLUD Jawa Timur</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -26,9 +26,9 @@
     <!-- Reusable CSS -->
     <link rel="stylesheet" href="/assets/css/template.css" />
     <link rel="stylesheet" href="/assets/css/sidebar.css" />
-
-    <!-- List Permohonan CSS -->
-    <link rel="stylesheet" href="/assets/css/list_permohonan.css" />
+    
+    <!-- UNIFIED CSS - Now using master-table.css instead of dokumen_syarat.css -->
+    <link rel="stylesheet" href="/assets/css/admin/OPD.css" />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -61,7 +61,7 @@
             <div class="breadcrumb-custom">
               <span>DASHBOARD</span>
               <span class="separator">></span>
-              <span class="active">PERMOHONAN PROSES</span>
+              <span class="active">DOKUMEN SYARAT</span>
             </div>
           </div>
 
@@ -80,8 +80,8 @@
             </button>
 
             <div class="d-flex align-items-center gap-2">
-              <div class="user-avatar">P</div>
-              <span class="text-white fw-semibold">Pendidikan</span>
+              <div class="user-avatar">T</div>
+              <span class="text-white fw-semibold">TIM PENILAI</span>
             </div>            
           </div>
         </div>
@@ -94,20 +94,19 @@
     <!-- Main Container -->
     <div class="main-container w-100">
       <div class="box-background"></div>
-      <div
-        class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+      <div class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+        
         <!-- Sidebar -->
         <aside class="sidebar-custom" id="sidebar">
           <nav class="sidebar-nav">
-            <!-- Dashboard - Menu Biasa (tanpa submenu) -->
-            <a href="dashboard.html" class="nav-item-custom">
+            <a href="dashboard.html" class="nav-item-custom active">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 <path d="M9 22V12h6v10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
               <span>Dashboard</span>
             </a>
-        
+  
             <!-- Managemen User dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'userSubmenu')">
@@ -124,12 +123,10 @@
               </a>
               
               <div class="submenu" id="userSubmenu">
-                <a href="user.html" class="submenu-item">
-                  USER
-                </a>
+                <a href="user.html" class="submenu-item">USER</a>
               </div>
             </div>
-        
+  
             <!-- Master dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'masterSubmenu')">
@@ -151,7 +148,7 @@
                 <a href="indikator_evaluasi.html" class="submenu-item">INDIKATOR EVALUASI</a>
               </div>
             </div>
-        
+  
             <!-- Permohonan dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'permohonanSubmenu')">
@@ -168,12 +165,10 @@
               </a>
               
               <div class="submenu" id="permohonanSubmenu">
-                <a href="list_permohonan.html" class="submenu-item">
-                  PERMOHONAN PROSES
-                </a>
+                <a href="list_permohonan.html" class="submenu-item">PERMOHONAN PROSES</a>
               </div>
             </div>
-        
+  
             <!-- Monitoring dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'monitoringSubmenu')">
@@ -197,15 +192,15 @@
         <!-- Content -->
         <div class="content-inner bg-white h-100">
           <div class="content-title">
-            <h2>PERMOHONAN PROSES</h2>
+            <h2>DOKUMEN SYARAT</h2>
           </div>
 
           <!-- Header Actions -->
           <div class="header-actions">
-            <a href="pengajuan_data.html" class="btn-new text-decoration-none">
+            <button class="btn-new">
               <i class="bi bi-plus-lg"></i>
               New
-            </a>                      
+            </button>
             <button class="btn-filter">
               <i class="bi bi-funnel"></i>
             </button>
@@ -214,116 +209,144 @@
           <!-- Table -->
           <div class="table-container">
             <div class="table-responsive">
-              <table class="table table-usulan">
+              <!-- PERHATIKAN: Ganti class dari "table-dokumen" menjadi "table-master" atau tetap pakai "table-dokumen" (backward compatible) -->
+              <table class="table table-master">
                 <thead>
                   <tr>
-                    <th scope="col">
-                      <input type="checkbox" />
+                    <th style="width: 40px;">
+                      <input type="checkbox" class="form-check-input">
                     </th>
-                    <th scope="col">Kode</th>
-                    <th scope="col">Calon blud</th>
-                    <th scope="col">Opd</th>
-                    <th scope="col">Bidang</th>
-                    <th scope="col">Status</th>
-                    <th scope="col" class="text-center">Actions</th>
+                    <th>Nama</th>
+                    <th>Persyaratan</th>
+                    <th>Bobot (%)</th>
+                    <th>Wajib Upload</th>
+                    <th>Urutan Lampiran</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-90QCONY</td>
-                    <td>SMKN1 Surabaya</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan Menengah Kejuruan</td>
                     <td>
-                      <span class="badge-status badge-proses">PROSES PENILAIAN</span>
+                      <input type="checkbox" class="form-check-input">
                     </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <a href="/pages/opd/detail_data.html" class="btn btn-outline-primary btn-sm text-decoration-none">
-                          <i class="bi bi-chat-square-text"></i> Detail
-                        </a> 
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
+                    <td>Dokumen Substantif</td>
+                    <td>Substantif</td>
+                    <td>1</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td></td>
+                    <td>
+                      <button class="btn-edit"><i class="bi bi-pencil"></i> Edit</button>
+                      <button class="btn-delete"><i class="bi bi-trash"></i> Delete</button>
+                      <button class="btn-detail"><i class="bi bi-chat-square-text"></i> Detail</button>
                     </td>
                   </tr>
-          
                   <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-920676QP</td>
-                    <td>SMKN2 Surabaya</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan dan Pelatihan</td>
                     <td>
-                      <span class="badge-status badge-proses">PROSES PENILAIAN</span>
+                      <input type="checkbox" class="form-check-input">
                     </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <a href="./detail_data.html" class="btn btn-outline-primary btn-sm ... text-decoration-none">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </a>
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
+                    <td>Dokumen Teknis</td>
+                    <td>Teknis</td>
+                    <td>1</td>
+                    <td><i class="bi bi-check-lg text-success"></i></td>
+                    <td></td>
+                    <td>
+                      <button class="btn-edit"><i class="bi bi-pencil"></i> Edit</button>
+                      <button class="btn-delete"><i class="bi bi-trash"></i> Delete</button>
+                      <button class="btn-detail"><i class="bi bi-chat-square-text"></i> Detail</button>
                     </td>
                   </tr>
-          
                   <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-9AAPQPOY</td>
-                    <td>SMKN 5 SURABAYA</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan Menengah Kejuruan</td>
                     <td>
-                      <span class="badge-status badge-proses">PROSES PENILAIAN</span>
+                      <input type="checkbox" class="form-check-input">
                     </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <button
-                          class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 justify-content-center">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </button>
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
+                    <td>Bentuk Layanan Umum, Frekuensi Aktivitas Layanan</td>
+                    <td>Substantif</td>
+                    <td>40</td>
+                    <td>1</td>
+                    <td><i class="bi bi-x-lg text-danger"></i></td>
+                    <td>
+                      <button class="btn-edit"><i class="bi bi-pencil"></i> Edit</button>
+                      <button class="btn-delete"><i class="bi bi-trash"></i> Delete</button>
+                      <button class="btn-detail"><i class="bi bi-chat-square-text"></i> Detail</button>
                     </td>
                   </tr>
-          
                   <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-9ADDRQML</td>
-                    <td>SMKN 6 Surabaya</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan dan Pelatihan</td>
                     <td>
-                      <span class="badge-status badge-draft">DRAFT</span>
+                      <input type="checkbox" class="form-check-input">
                     </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <button
-                          class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 justify-content-center">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </button>
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
+                    <td>Karakteristik pasar pada bisnis BLUD</td>
+                    <td>Substantif</td>
+                    <td>20</td>
+                    <td>2</td>
+                    <td><i class="bi bi-x-lg text-danger"></i></td>
+                    <td>
+                      <button class="btn-edit"><i class="bi bi-pencil"></i> Edit</button>
+                      <button class="btn-delete"><i class="bi bi-trash"></i> Delete</button>
+                      <button class="btn-detail"><i class="bi bi-chat-square-text"></i> Detail</button>
                     </td>
                   </tr>
-          
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-check-input">
+                    </td>
+                    <td>Struktur, Tugas dan Fungsi BLUD</td>
+                    <td>Substantif</td>
+                    <td>40</td>
+                    <td>3</td>
+                    <td><i class="bi bi-x-lg text-danger"></i></td>
+                    <td>
+                      <button class="btn-edit"><i class="bi bi-pencil"></i> Edit</button>
+                      <button class="btn-delete"><i class="bi bi-trash"></i> Delete</button>
+                      <button class="btn-detail"><i class="bi bi-chat-square-text"></i> Detail</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input type="checkbox" class="form-check-input">
+                    </td>
+                    <td>Pelayanan lebih layak dengan penerapan BLUD</td>
+                    <td>Teknis</td>
+                    <td>40</td>
+                    <td>1</td>
+                    <td><i class="bi bi-x-lg text-danger"></i></td>
+                    <td>
+                      <button class="btn-edit"><i class="bi bi-pencil"></i> Edit</button>
+                      <button class="btn-delete"><i class="bi bi-trash"></i> Delete</button>
+                      <button class="btn-detail"><i class="bi bi-chat-square-text"></i> Detail</button>
+                    </td>
+                  </tr>
                 </tbody>
               </table>
             </div>
           </div>
-          
+
+          <!-- Pagination -->
+          <div class="pagination-container">
+            <div class="pagination-info">
+              <span>15 results (page 1/2) | no datasets chosen</span>
+            </div>
+            <div class="pagination-controls">
+              <button class="page-btn" disabled><i class="bi bi-chevron-double-left"></i></button>
+              <button class="page-btn" disabled><i class="bi bi-chevron-left"></i></button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn"><i class="bi bi-chevron-right"></i></button>
+              <button class="page-btn"><i class="bi bi-chevron-double-right"></i></button>
+            </div>
+          </div>
+
+          <!-- Entries per page -->
+          <div class="entries-per-page">
+            <label>Entries per page:</label>
+            <select class="form-select form-select-sm">
+              <option selected>10</option>
+              <option>25</option>
+              <option>50</option>
+              <option>100</option>
+            </select>
+          </div>
         </div>
+
       </div>
     </div>
 

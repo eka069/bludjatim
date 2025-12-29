@@ -3,70 +3,12 @@ a {
   color: inherit;
 }
 
-body {
-  background-color: #6C430A;
-}
-
 /* ===== NAVBAR ===== */
-.navbar-custom {
-  background-color: #6C430A;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.notification-badge {
-  border: 2px solid #6C430A;
-}
-
-.box-background {
-  background-color: #B66C05;
-}
-
-.sidebar-custom {
-  background-color: #FFDFB1;
-}
-
-.nav-item-custom {
-  color: #6C430A;
-}
-
-.nav-item-custom:hover {
-  background-color: rgba(108, 67, 10, 0.46);
-  color: white;
-}
-
-.nav-item-custom.active {
-  background-color: #6C430A;
-  color: white;
-}
-
 .nav-icon-img {
   width: 22px;
   height: 22px;
   flex-shrink: 0;
   object-fit: contain;
-}
-
-/* Filter warna icon untuk role penilai (brown) */
-.role-penilai .nav-icon-img {
-  filter: invert(34%) sepia(85%) saturate(2000%) hue-rotate(16deg) brightness(50%) contrast(100%);
-}
-
-/* Filter warna icon menjadi putih saat active */
-.nav-item-custom.active .nav-icon-img {
-  filter: brightness(0) invert(1);
-}
-
-/* Filter warna icon menjadi putih saat hover */
-.nav-item-custom:hover .nav-icon-img {
-  filter: brightness(0) invert(1);
-}
-
-.content-container {
-  background-color: #FFDFB1;
-}
-
-.content-title h2 {
-  color: #6C430A;
 }
 
 /* ===== MODIFIKASI UNTUK SCROLLABLE CONTENT ===== */
@@ -85,7 +27,7 @@ body {
 }
 
 .content-title h2 {
-  color: #6C430A;
+  color: #1e293b;
   margin: 0;
 }
 
@@ -128,7 +70,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background-color: #F8C987;
+  background-color: #2B4286;
   color: white;
   padding: 6px 14px;
   border-radius: 6px;
@@ -207,12 +149,12 @@ body {
 }
 
 .tab:hover {
-  color: #B66C05;
+  color: #071a50;
 }
 
 .tab.active {
   color: #000000;
-  border-bottom-color: #B66C05;
+  border-bottom-color: #2B4286;
 }
 
 /* Form Container */

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Permohonan Proses | BLUD Jawa Timur</title>
+    <title>Buat User Baru | BLUD Jawa Timur</title>
 
     <!-- Bootstrap CSS -->
     <link
@@ -26,9 +26,8 @@
     <!-- Reusable CSS -->
     <link rel="stylesheet" href="/assets/css/template.css" />
     <link rel="stylesheet" href="/assets/css/sidebar.css" />
-
-    <!-- List Permohonan CSS -->
-    <link rel="stylesheet" href="/assets/css/list_permohonan.css" />
+    <link rel="stylesheet" href="/assets/css/sidebar-submenu.css" />
+    <link rel="stylesheet" href="/assets/css/admin/user.css" />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -61,7 +60,9 @@
             <div class="breadcrumb-custom">
               <span>DASHBOARD</span>
               <span class="separator">></span>
-              <span class="active">PERMOHONAN PROSES</span>
+              <span>DAFTAR USER</span>
+              <span class="separator">></span>
+              <span class="active">BUAT USER BARU</span>
             </div>
           </div>
 
@@ -80,8 +81,8 @@
             </button>
 
             <div class="d-flex align-items-center gap-2">
-              <div class="user-avatar">P</div>
-              <span class="text-white fw-semibold">Pendidikan</span>
+              <div class="user-avatar">A</div>
+              <span class="text-white fw-semibold">ADMINISTRATOR</span>
             </div>            
           </div>
         </div>
@@ -94,12 +95,11 @@
     <!-- Main Container -->
     <div class="main-container w-100">
       <div class="box-background"></div>
-      <div
-        class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+      <div class="container-fluid content-container position-relative p-0 w-100 h-100 d-flex justify-content-between align-items-start">
+        
         <!-- Sidebar -->
         <aside class="sidebar-custom" id="sidebar">
           <nav class="sidebar-nav">
-            <!-- Dashboard - Menu Biasa (tanpa submenu) -->
             <a href="dashboard.html" class="nav-item-custom">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                 <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,10 +107,10 @@
               </svg>
               <span>Dashboard</span>
             </a>
-        
+
             <!-- Managemen User dengan Submenu -->
             <div>
-              <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'userSubmenu')">
+              <a href="#" class="nav-item-custom has-active-submenu expanded" onclick="toggleSubmenu(event, 'userSubmenu')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke-linecap="round" stroke-linejoin="round"/>
                   <circle cx="9" cy="7" r="4" stroke-linecap="round" stroke-linejoin="round"/>
@@ -123,13 +123,11 @@
                 </svg>
               </a>
               
-              <div class="submenu" id="userSubmenu">
-                <a href="user.html" class="submenu-item">
-                  USER
-                </a>
+              <div class="submenu show" id="userSubmenu">
+                <a href="user.html" class="submenu-item active">USER</a>
               </div>
             </div>
-        
+
             <!-- Master dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'masterSubmenu')">
@@ -144,14 +142,14 @@
               </a>
               
               <div class="submenu" id="masterSubmenu">
-                <a href="dokumen_syarat.html" class="submenu-item">DOKUMEN SYARAT</a>
-                <a href="opd.html" class="submenu-item">OPD</a>
-                <a href="bidang.html" class="submenu-item">BIDANG</a>
-                <a href="instansi.html" class="submenu-item">INSTANSI</a>
-                <a href="indikator_evaluasi.html" class="submenu-item">INDIKATOR EVALUASI</a>
+                <a href="#" class="submenu-item">DOKUMEN SYARAT</a>
+                <a href="#" class="submenu-item">OPD</a>
+                <a href="#" class="submenu-item">BIDANG</a>
+                <a href="#" class="submenu-item">INSTANSI</a>
+                <a href="#" class="submenu-item">INDIKATOR EVALUASI</a>
               </div>
             </div>
-        
+
             <!-- Permohonan dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'permohonanSubmenu')">
@@ -168,12 +166,10 @@
               </a>
               
               <div class="submenu" id="permohonanSubmenu">
-                <a href="list_permohonan.html" class="submenu-item">
-                  PERMOHONAN PROSES
-                </a>
+                <a href="list_permohonan.html" class="submenu-item">PERMOHONAN PROSES</a>
               </div>
             </div>
-        
+
             <!-- Monitoring dengan Submenu -->
             <div>
               <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'monitoringSubmenu')">
@@ -196,141 +192,104 @@
 
         <!-- Content -->
         <div class="content-inner bg-white h-100">
-          <div class="content-title">
-            <h2>PERMOHONAN PROSES</h2>
-          </div>
-
-          <!-- Header Actions -->
-          <div class="header-actions">
-            <a href="pengajuan_data.html" class="btn-new text-decoration-none">
-              <i class="bi bi-plus-lg"></i>
-              New
-            </a>                      
-            <button class="btn-filter">
-              <i class="bi bi-funnel"></i>
-            </button>
-          </div>
-
-          <!-- Table -->
-          <div class="table-container">
-            <div class="table-responsive">
-              <table class="table table-usulan">
-                <thead>
-                  <tr>
-                    <th scope="col">
-                      <input type="checkbox" />
-                    </th>
-                    <th scope="col">Kode</th>
-                    <th scope="col">Calon blud</th>
-                    <th scope="col">Opd</th>
-                    <th scope="col">Bidang</th>
-                    <th scope="col">Status</th>
-                    <th scope="col" class="text-center">Actions</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-90QCONY</td>
-                    <td>SMKN1 Surabaya</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan Menengah Kejuruan</td>
-                    <td>
-                      <span class="badge-status badge-proses">PROSES PENILAIAN</span>
-                    </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <a href="/pages/opd/detail_data.html" class="btn btn-outline-primary btn-sm text-decoration-none">
-                          <i class="bi bi-chat-square-text"></i> Detail
-                        </a> 
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-          
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-920676QP</td>
-                    <td>SMKN2 Surabaya</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan dan Pelatihan</td>
-                    <td>
-                      <span class="badge-status badge-proses">PROSES PENILAIAN</span>
-                    </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <a href="./detail_data.html" class="btn btn-outline-primary btn-sm ... text-decoration-none">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </a>
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-          
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-9AAPQPOY</td>
-                    <td>SMKN 5 SURABAYA</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan Menengah Kejuruan</td>
-                    <td>
-                      <span class="badge-status badge-proses">PROSES PENILAIAN</span>
-                    </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <button
-                          class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 justify-content-center">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </button>
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-          
-                  <tr>
-                    <td><input type="checkbox" /></td>
-                    <td>BLUD-9ADDRQML</td>
-                    <td>SMKN 6 Surabaya</td>
-                    <td>Pendidikan</td>
-                    <td>Pendidikan dan Pelatihan</td>
-                    <td>
-                      <span class="badge-status badge-draft">DRAFT</span>
-                    </td>
-                    <td class="text-center">
-                      <div class="d-flex flex-column gap-1">
-                        <button
-                          class="btn btn-outline-primary btn-sm d-flex align-items-center gap-1 justify-content-center">
-                          <i class="bi bi-chat-square-text"></i>
-                          Detail
-                        </button>
-                        <button class="btn btn-danger btn-sm">
-                          Delete
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-          
-                </tbody>
-              </table>
+          <div class="form-header">
+            <div class="form-title">
+              <h2>BUAT USER BARU</h2>
+            </div>
+            <div class="form-actions">
+              <button class="btn-save">
+                <i class="bi bi-floppy"></i>
+                Save
+              </button>
+              <button class="btn-back" onclick="window.location.href='user.html'">
+                <i class="bi bi-list-ul"></i>
+                Back to list
+              </button>
             </div>
           </div>
-          
+
+          <form class="user-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nama">NAMA <span class="required">*</span></label>
+                <input type="text" class="form-control" id="nama" placeholder="" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="username">USERNAME <span class="required">*</span></label>
+                <input type="text" class="form-control" id="username" placeholder="" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="password">PASSWORD <span class="required">*</span></label>
+                <input type="password" class="form-control" id="password" placeholder="" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nomor_hp">NOMOR HP</label>
+                <div class="phone-input-group">
+                  <span class="phone-prefix">+62</span>
+                  <input type="text" class="form-control phone-input" id="nomor_hp" placeholder="">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">EMAIL <span class="required">*</span></label>
+                <input type="email" class="form-control" id="email" placeholder="" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="group">GROUP <span class="required">*</span></label>
+                <select class="form-control" id="group" required>
+                  <option value="">-- Pilih Group --</option>
+                  <option value="BLUD" selected>BLUD</option>
+                  <option value="TIM PENILAI">TIM PENILAI</option>
+                  <option value="OPD">OPD</option>
+                  <option value="ADMINISTRATOR">ADMINISTRATOR</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="active">ACTIVE</label>
+                <div class="checkbox-wrapper">
+                  <input type="checkbox" class="form-check-input" id="active" checked>
+                </div>
+              </div>
+            </div>
+          </form>
+
+          <div class="form-footer">
+            <button class="btn-save">
+              <i class="bi bi-floppy"></i>
+              Save
+            </button>
+            <button class="btn-back" onclick="window.location.href='user.html'">
+              <i class="bi bi-list-ul"></i>
+              Back to list
+            </button>
+          </div>
         </div>
+
       </div>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Sidebar JS (Reusable) -->
+    <!-- Sidebar JS -->
     <script src="/assets/js/sidebar.js"></script>
+    <script src="/assets/js/sidebar-submenu.js"></script>
   </body>
 </html>
