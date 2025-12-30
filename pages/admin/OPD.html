@@ -101,29 +101,13 @@
         <!-- Sidebar -->
         <aside class="sidebar-custom" id="sidebar">
           <nav class="sidebar-nav">
-            <a href="dashboard.html" class="nav-item-custom active">
-                <svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                >
-                  <path
-                    d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M9 22V12h6v10"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-                <span>Dashboard</span>
-              </a>
+            <a href="dashboard.html" class="nav-item-custom">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M9 22V12h6v10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>Dashboard</span>
+            </a>
   
             <!-- Managemen User dengan Submenu -->
             <div>
@@ -141,15 +125,13 @@
               </a>
               
               <div class="submenu" id="userSubmenu">
-                <a href="user.html" class="submenu-item">
-                  USER
-                </a>
+                <a href="user.html" class="submenu-item">USER</a>
               </div>
             </div>
   
             <!-- Master dengan Submenu -->
             <div>
-              <a href="#" class="nav-item-custom" onclick="toggleSubmenu(event, 'masterSubmenu')">
+              <a href="#" class="nav-item-custom active" onclick="toggleSubmenu(event, 'masterSubmenu')">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2" stroke-linecap="round" stroke-linejoin="round"/>
                   <line x1="9" y1="3" x2="9" y2="21" stroke-linecap="round" stroke-linejoin="round"/>
@@ -160,12 +142,12 @@
                 </svg>
               </a>
               
-              <div class="submenu" id="masterSubmenu">
-                <a href="dokumen_syarat.html" class="submenu-item" onclick="navigateToPage('dokumen_syarat.html'); return false;">DOKUMEN SYARAT</a>
-                <a href="opd.html" class="submenu-item" onclick="navigateToPage('opd.html'); return false;">OPD</a>
-                <a href="bidang.html" class="submenu-item" onclick="navigateToPage('bidang.html'); return false;">BIDANG</a>
-                <a href="instansi.html" class="submenu-item" onclick="navigateToPage('instansi.html'); return false;">INSTANSI</a>
-                <a href="indikator_evaluasi.html" class="submenu-item" onclick="navigateToPage('indikator_evaluasi.html'); return false;">INDIKATOR EVALUASI</a>
+              <div class="submenu show" id="masterSubmenu">
+                <a href="dokumen_syarat.html" class="submenu-item">DOKUMEN SYARAT</a>
+                <a href="opd.html" class="submenu-item">OPD</a>
+                <a href="bidang.html" class="submenu-item">BIDANG</a>
+                <a href="instansi.html" class="submenu-item active">INSTANSI</a>
+                <a href="indikator_evaluasi.html" class="submenu-item">INDIKATOR EVALUASI</a>
               </div>
             </div>
   
@@ -185,9 +167,7 @@
               </a>
               
               <div class="submenu" id="permohonanSubmenu">
-                <a href="list_permohonan.html" class="submenu-item">
-                  PERMOHONAN PROSES
-                </a>
+                <a href="list_permohonan.html" class="submenu-item">PERMOHONAN PROSES</a>
               </div>
             </div>
   
@@ -210,7 +190,6 @@
             </div>
           </nav>
         </aside>
-
        <!-- Content -->
 <div class="content-inner bg-white h-100">
   <div class="content-title">
